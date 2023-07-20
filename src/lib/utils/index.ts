@@ -16,5 +16,9 @@ export const fetchPosts = async () => {
     })
   );
 
-  return posts;
+  const sortedPosts = posts.sort((a, b) => {
+    return new Date(b.meta.date) - new Date(a.meta.date)
+  });
+
+  return sortedPosts;
 }
