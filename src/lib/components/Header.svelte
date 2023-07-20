@@ -1,3 +1,7 @@
+<script>
+const toggle = () => window.document.body.classList.toggle("dark-mode");
+</script>
+
 <header>
   <a class="logo" href="/">G</a>
 
@@ -8,7 +12,7 @@
       <li><a href="/resume">Resume</a></li>
       <li><a href="/blog">Blog</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><button><i class="icon iconoir-half-moon"></i></button></li>
+      <li><button on:click={toggle}><i class="icon iconoir-half-moon"></i></button></li>
     </ul>
   </nav>
 </header>

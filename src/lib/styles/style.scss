@@ -8,6 +8,6 @@ body {
   margin: 0;
 }
 
-:global(body.dark-mode) body {
+body.dark-mode {
   background-color: #000;
 }
