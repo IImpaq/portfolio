@@ -20,4 +20,9 @@ export let data;
 <Footer />
 
 <style lang="scss">
+main {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
 </style>

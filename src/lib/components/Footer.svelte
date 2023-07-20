@@ -9,10 +9,10 @@
     <a href="/"><i class="icon iconoir-discord"></i></a>
   </div>
   <ul class="links">
-    <li class="link"><a href="/">Home</a></li>
-    <li class="link"><a href="/blog">Blog</a></li>
-    <li class="link"><a href="/about">About</a></li>
+    <li class="link"><a href="/">About</a></li>
     <li class="link"><a href="/projects">Projects</a></li>
+    <li class="link"><a href="/resume">Resume</a></li>
+    <li class="link"><a href="/blog">Blog</a></li>
     <li class="link"><a href="/contact">Contact</a></li>
   </ul>
   <div class="copyright">
