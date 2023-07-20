@@ -1,3 +1,8 @@
+<script>
+  import portraitTitle from "$lib/assets/portrait-title.jpg";
+  import portraitAbout from "$lib/assets/portrait-about.jpg";
+</script>
+
 <div class="heading">
   <div class="information">
     <h1>Hi, I'm Marcus</h1>
@@ -5,7 +10,7 @@
     <p>Software Engineering sutdent with lots<br>of experience in low-level development.<br>Also occasionally working on front-end.</p>
     <button>Read More</button>
   </div>
-  <img class="portrait" alt="portrait" src="https://images.gutefrage.net/media/fragen/bilder/wie-findet-ihr-chihuahuas/0_full.jpg?v=1615990702000"/>
+  <img class="portrait" alt="portrait" src="{portraitTitle}"/>
 </div>
 
 
@@ -15,7 +20,7 @@
     <h2>Introduction</h2>
   </div>
   <div class="content">
-    <img class="portrait" alt="portrait" src="https://images.gutefrage.net/media/fragen/bilder/wie-findet-ihr-chihuahuas/0_full.jpg?v=1615990702000"/>
+    <img class="portrait" alt="portrait" src="{portraitAbout}"/>
     <div class="information">
       <p>My name is Marcus Gugacs and I'm a Software<br>Engineering student at TU Graz right now. My<br>passion is developing games, game engines<br>and low-level applications. The journey of<br>programming started when I was 13 years old<br>while playing Minecraft.<br>It never stopped ever since!</p>
 
@@ -91,7 +96,8 @@
   }
 
   .portrait {
-    max-width: 25rem;
+    max-height: 20rem;
+    border-radius: 28% 72% 65% 35% / 34% 45% 55% 66%;
   }
 }
 
@@ -184,7 +190,8 @@
     }
 
     .portrait {
-      max-height: 20rem;
+      max-height: 30rem;
+      border-radius: 1rem;
     }
   }
 }

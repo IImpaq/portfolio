@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-## Reason
+## Context 
 
 This website is intended for the sole purpose of representing my personal portfolio.
 
