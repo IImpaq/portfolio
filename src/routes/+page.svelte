@@ -1,4 +1,6 @@
 <script>
+  import { goto } from '$app/navigation';
+
   import portraitTitle from "$lib/assets/portrait-title.jpg";
   import portraitAbout from "$lib/assets/portrait-about.jpg";
 </script>
@@ -40,8 +42,8 @@
       </div>
 
       <div class="more">
-        <button>Resume</button>
-        <button>Projects</button>
+        <button on:click={() => goto("/resume")}>Resume</button>
+        <button on:click={() => goto("/projects")}>Projects</button>
       </div>
     </div>
   </div>
@@ -51,6 +53,7 @@
 .heading {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 20rem 15rem 0 15rem;
@@ -116,6 +119,7 @@
     justify-content: center;
 
     h1 {
+      text-align: center;
       font-size: 3rem;
       font-weight: bold;
       padding: 0 0 0.2rem 0;
@@ -133,6 +137,7 @@
   .content {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 5rem;
 
