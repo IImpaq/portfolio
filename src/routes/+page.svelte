@@ -5,29 +5,57 @@
     <p>Software Engineering sutdent with high level experience in low-level development.</p>
     <button>Read More</button>
   </div>
-  <div class="portrait">
-    <img src="https://images.gutefrage.net/media/fragen/bilder/wie-findet-ihr-chihuahuas/0_full.jpg?v=1615990702000" width="500px" />
-  </div>
+  <img class="portrait" alt="portrait" src="https://images.gutefrage.net/media/fragen/bilder/wie-findet-ihr-chihuahuas/0_full.jpg?v=1615990702000"/>
 </div>
 
 <style lang="scss">
-  .heading {
-    width: 100%;
-    margin: 0;
-    padding: 10rem 0rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
+.heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 15rem 17.5rem;
+  gap: 5rem;
 
-    .information {
-      display: flex;
-      flex-direction: column;
+  .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      padding: 0;
+      margin: 0;
     }
 
-    .portrait {
-      size: 2rem;
+    h2 {
+      color: #545454;
+      padding: 0 0 1rem 0;
+      margin: 0;
+    }
+
+    p {
+      padding: 0 0 1rem 0;
+      margin: 0;
+    }
+
+    button {
+      width: 8rem;
+      height: 3rem;
+      background-color: #101010;
+      border: none;
+      border-radius: 0.5rem;
+      color: #EEE;
+      font-size: 1rem;
+      font-weight: medium; 
+      cursor: pointer;
     }
   }
+
+  .portrait {
+    max-width: 25rem;
+  }
+}
 </style>

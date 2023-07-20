@@ -13,9 +13,11 @@ export let data;
 
 {#key data.currentRoute}
   <main in:fade={{ duration: 100, delay: 100 }} out:fade={{ duration: 100 }}>
-    <slot />
+    <slot/>
   </main>
 {/key}
 
 <Footer />
 
+<style lang="scss">
+</style>
