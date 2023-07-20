@@ -11,7 +11,8 @@ export const fetchPosts = async () => {
       return {
         meta: metadata,
         path: postPath,
-        date: dateFormatted
+        date: dateFormatted,
+        preview: metadata.preview
       }
     })
   );

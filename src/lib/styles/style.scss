@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 body {
-  background: #FFF;
-  color: #333;
+  background: var(--bg-light);
+  color: var(--text-dark);
   font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 0;
 }
 
-:global(body.dark-mode) body {
+body.dark-mode {
   background-color: #000;
 }
