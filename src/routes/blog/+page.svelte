@@ -41,6 +41,7 @@
       font-weight: bold;
       padding: 0 0 0.2rem 0;
       margin: 0;
+      text-align: center;
     }
 
     h2 {
@@ -48,14 +49,20 @@
       color: var(--text-semi);
       padding: 0 0 1.1rem 0;
       margin: 0;
+      text-align: center;
     }
   }
 
   .posts {
+    padding: 0;
+    margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    justify-content: center;
+    align-items: center;
     list-style: none;
+    grid-gap: 2rem;
+    width: 90%;
 
     .post {
       display: flex;
