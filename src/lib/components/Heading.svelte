@@ -37,7 +37,7 @@
 
     h2 {
       font-size: 1.1rem;
-      color: #707070;
+      color: var(--text-semi);
       padding: 0 0 1.1rem 0;
       margin: 0;
     }
@@ -51,10 +51,10 @@
     button {
       width: 8rem;
       height: 3rem;
-      background-color: #101010;
+      background-color: var(--bg-dark);
       border: none;
       border-radius: 0.5rem;
-      color: #EEE;
+      color: var(--text-light);
       font-size: 1rem;
       font-weight: medium; 
       cursor: pointer;

@@ -25,4 +25,13 @@ main {
   margin: 0;
   width: 100%;
 }
+
+:global(:root) {
+  --bg-light: #FFF;
+  --bg-dark: #101010;
+
+  --text-dark: #101010;
+  --text-light: #EEE;
+  --text-semi: #707070;
+}
 </style>

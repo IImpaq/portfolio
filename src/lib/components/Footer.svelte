@@ -22,7 +22,7 @@
 
 <style lang="scss">
 footer {
-  background: #101010;
+  background: var(--bg-dark);
   padding: 4rem 0rem;
   width: 100%;
   margin: auto 0;
@@ -41,7 +41,7 @@ footer {
 
     a {
       font-size: 1.5rem;
-      color: #EDEDED;
+      color: var(--text-light);
       text-decoration: none;
     }
   }
@@ -59,7 +59,7 @@ footer {
     .link {
       a {
         text-decoration: none;
-        color: #EDEDED;
+        color: var(--text-light);
         font-size: 1rem;
       }
     }
@@ -73,7 +73,7 @@ footer {
     gap: 2rem;
     padding: 0;
     font-size: 0.9rem;
-    color: #DDD;
+    color: var(--text-light);
   }
   
 }

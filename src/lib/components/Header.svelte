@@ -20,12 +20,12 @@ const toggle = () => window.document.body.classList.toggle("dark-mode");
 <style lang="scss">
 header {
   padding: 1rem 5rem;
-  background: #FEFEFE;
+  background: var(--bg-light);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  color: #101010;
+  color: var(--text-dark);
 
   .logo {
     font-weight: bold;

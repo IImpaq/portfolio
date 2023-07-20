@@ -8,5 +8,3 @@
 <About />
 <History />
 
-<style lang="scss">
-</style>

@@ -63,7 +63,7 @@
 
     h2 {
       font-size: 1.1rem;
-      color: #707070;
+      color: var(--text-semi);
       padding: 0 0 1.1rem 0;
       margin: 0;
     }
@@ -80,7 +80,7 @@
 
   .line {
     position: relative;
-    background: #121212;
+    background: var(--bg-dark);
     width: 3px;
     height: 100%;
   }
@@ -92,7 +92,7 @@
     width: 1.1rem;
     height: 1.1rem; 
     border-radius: 50%;
-    background: #121212;
+    background: var(--bg-dark);
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
@@ -113,13 +113,13 @@
 
     h4 {
       font-size: 1rem;
-      color: #707070;
+      color: var(--text-semi);
       padding: 0;
       margin: 0;
     }
 
     p {
-      color: #101010;
+      color: var(--text-dark);
       padding: 0;
       margin: 0;
     }
