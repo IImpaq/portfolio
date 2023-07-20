@@ -1,5 +1,5 @@
 export const fetchPosts = async () => {
-  const postFiles = import.meta.glob("/src/routes/blog/*.md");
+  const postFiles = import.meta.glob("/src/routes/blog/posts/*.md");
   const postObjs = Object.entries(postFiles);
 
   const posts = await Promise.all(
