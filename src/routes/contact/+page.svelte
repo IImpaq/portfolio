@@ -43,9 +43,10 @@
       </div>
       <div>
         <h3>Socials</h3>
-        <p><i class="iconoir-nav-arrow-right"></i><a href="/">GitHub</a></p>
-        <p><i class="iconoir-nav-arrow-right"></i><a href="/">Instagram</a></p>
-        <p><i class="iconoir-nav-arrow-right"></i><a href="/">Twitter</a></p>
+        <p><i class="iconoir-nav-arrow-right"></i><a href="https://github.com/IImpaq">GitHub</a></p>
+        <p><i class="iconoir-nav-arrow-right"></i><a href="https://www.instagram.com/marcus.gugacs/">Instagram</a></p>
+        <p><i class="iconoir-nav-arrow-right"></i><a href="https://twitter.com/Impaq_">Twitter</a></p>
+        <p><i class="iconoir-nav-arrow-right"></i><a href="https://www.twitch.tv/iimpaq">Twitch</a></p>
         <p><i class="iconoir-nav-arrow-right"></i><a href="/">Discord</a></p>
       </div>
     <div>
