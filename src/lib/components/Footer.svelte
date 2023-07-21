@@ -3,9 +3,10 @@
 
 <footer>
   <div class="socials">
-    <a href="/"><i class="icon iconoir-github"></i></a>
-    <a href="/"><i class="icon iconoir-instagram"></i></a>
-    <a href="/"><i class="icon iconoir-twitter"></i></a>
+    <a href="https://github.com/IImpaq"><i class="icon iconoir-github"></i></a>
+    <a href="https://www.instagram.com/marcus.gugacs/"><i class="icon iconoir-instagram"></i></a>
+    <a href="https://twitter.com/Impaq_"><i class="icon iconoir-twitter"></i></a>
+    <a href="https://www.twitch.tv/iimpaq"><i class="icon iconoir-modern-tv"></i></a>
     <a href="/"><i class="icon iconoir-discord"></i></a>
   </div>
   <ul class="links">
