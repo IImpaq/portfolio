@@ -6,6 +6,50 @@
     <h1>Contact</h1>
     <h2>Get in touch</h2>
   </div>
+  <div class="content">
+    <div class="form">
+      <div>
+        <label for="name">Who are you?</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+      </div>
+      <div>
+        <label for="email">How can I contact you?</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required />
+      </div>
+      <div>
+        <label for="topic">What do you want to talk about?</label>
+        <input type="text" id="topic" name="topic" placeholder="A topic" required />
+      </div>
+      <div>
+        <label for="message">Get into more detail...</label>
+        <textarea rows=10 id="message" name="message" placeholder="Your message" required />
+      </div>
+
+      <button on:click|preventDefault={() => alert("The contact form doesn't work yet! Please send your email directly.")}>Send</button>
+    </div>
+    <div class="details">
+      <div>
+        <h3>Contact Details</h3>
+        <p>iimpaq@proton.me</p>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <p>Austria</p>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <p>German</p>
+        <p>English</p>
+      </div>
+      <div>
+        <h3>Socials</h3>
+        <p><i class="iconoir-nav-arrow-right"></i><a href="/">GitHub</a></p>
+        <p><i class="iconoir-nav-arrow-right"></i><a href="/">Instagram</a></p>
+        <p><i class="iconoir-nav-arrow-right"></i><a href="/">Twitter</a></p>
+        <p><i class="iconoir-nav-arrow-right"></i><a href="/">Discord</a></p>
+      </div>
+    <div>
+  </div>
 </section>
 
 <style lang="scss">
@@ -37,6 +81,98 @@
       padding: 0 0 1.1rem 0;
       margin: 0;
       text-align: center;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 30rem; 
+      gap: 2rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        label {
+          padding: 0;
+          margin: 0;
+          font-size: 1.2rem;
+          color: var(--text-dark);
+        }
+
+        input, textarea {
+          border: none;
+          background-color: var(--bg-light);
+          box-shadow: 0px 10px 10px 0px var(--box-shadow);
+          padding: 1rem 1rem 1rem 1rem;
+          border-radius: 0.5rem;
+          color: var(--text-dark);
+          font-family: Poppy, sans-serif;
+          font-size: 1rem;
+        }
+
+        textarea {
+          resize: vertical;
+        }
+      }
+
+      button {
+        margin: 0;
+        padding: 1rem 2rem 1rem 2rem;
+        font-size: 1.1rem;
+        background-color: var(--bg-dark);
+        color: var(--text-light);
+        cursor: pointer;
+        border: none;
+        border-radius: 0.5rem;
+      }
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      h3 {
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+        color: var(--text-semi);
+      }
+
+      p {
+        padding: 0;
+        margin: 0;
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        i {
+          padding: 0;
+          margin: 0;
+        }
+
+        a {
+          text-decoration: none;
+          padding: 0;
+          margin: 0;
+          font-size: 1.1rem;
+          color: var(--text-dark);
+        }
+      }
     }
   }
 }
