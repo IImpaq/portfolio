@@ -114,12 +114,11 @@
         input, textarea {
           border: none;
           background-color: var(--bg-light);
-          box-shadow: 0px 10px 10px 0px var(--box-shadow);
           padding: 1rem 1rem 1rem 1rem;
-          border-radius: 0.5rem;
           color: var(--text-dark);
           font-family: Poppy, sans-serif;
           font-size: 1rem;
+          border-bottom: 0.1rem solid var(--text-dark);
         }
 
         textarea {
