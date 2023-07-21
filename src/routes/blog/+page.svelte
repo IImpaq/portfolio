@@ -98,4 +98,10 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .blog {
+    padding: 10rem 0rem 20rem 0rem;
+  }
+}
 </style>

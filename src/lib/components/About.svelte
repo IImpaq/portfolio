@@ -72,6 +72,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 5rem;
 
     .information {
@@ -131,6 +132,18 @@
       max-height: 30rem;
       border-radius: 1rem;
     }
+  }
+}
+
+@media (max-width: 1350px) {
+  .about {
+    padding: 20rem 5rem 0 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 20rem 5rem 0rem 5rem;
   }
 }
 </style>

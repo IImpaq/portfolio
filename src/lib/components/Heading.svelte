@@ -6,7 +6,7 @@
   <div class="information">
     <h1>Hi, I'm Marcus</h1>
     <h2>Fullstack Developer</h2>
-    <p>Software Engineering sutdent with lots<br>of experience in low-level development.<br>Also occasionally working on front-end.</p>
+    <p>Software Engineering student with lots<br>of experience in low-level development.<br>Also occasionally working on front-end.</p>
     <button>Read More</button>
   </div>
   <img class="portrait" alt="portrait" src="{portraitTitle}"/>
@@ -26,7 +26,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
 
     h1 {
       font-size: 3rem;
@@ -64,6 +63,36 @@
   .portrait {
     max-height: 20rem;
     border-radius: 28% 72% 65% 35% / 34% 45% 55% 66%;
+  }
+}
+
+@media (max-width: 1350px) {
+  .heading {
+    padding: 20rem 5rem 0 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    .information {
+      align-items: center;
+
+      h1 {
+        text-align: center;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+
+    .portrait {
+      max-height: 15rem;
+    }
   }
 }
 </style>
