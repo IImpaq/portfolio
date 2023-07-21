@@ -134,8 +134,16 @@
   }
 }
 
+@media (max-width: 1350px) {
+  .history {
+    padding: 20rem 5rem 15rem 5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .history {
+    padding: 20rem 1rem 15rem 1rem;
+
     .timeline {
       display: flex;
       flex-direction: column;
@@ -147,6 +155,9 @@
       text-align: center;
     }
 
+    .content:nth-child(even) {
+      text-align: center;
+    }
     .circle {
       display: none;
     }

@@ -34,4 +34,13 @@ main {
   --text-light: #EEE;
   --text-semi: #707070;
 }
+
+:global(body.dark-mode) {
+  --bg-light: #101010;
+  --bg-dark: #FFF;
+
+  --text-dark: #EEE;
+  --text-light: #101010;
+  --text-semi: #AAA;
+}
 </style>

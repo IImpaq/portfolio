@@ -1,15 +1,15 @@
 <script>
 </script>
 
-<section class="contact">
+<section class="projects">
   <div class="title">
-    <h1>Contact</h1>
-    <h2>Get in touch</h2>
+    <h1>Projects</h1>
+    <h2>Things I worked on</h2>
   </div>
 </section>
 
 <style lang="scss">
-.contact{
+.projects {
   display: flex;
   flex-direction: column;
   align-items: center;

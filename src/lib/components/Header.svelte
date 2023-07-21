@@ -53,6 +53,10 @@ header {
           border: none;
           font-size: 1.5rem;
           cursor: pointer;
+
+          i {
+            color: var(--text-dark);
+          }
         }
       }
     }
