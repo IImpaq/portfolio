@@ -1,5 +1,13 @@
 <script>
   import portraitTitle from "$lib/assets/portrait-title.jpg";
+
+  const scrollToAbout = () => {
+    const el = document.querySelector("#about");
+    if(!el) return;
+    el.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
 </script>
 
 <section class="heading">
@@ -7,7 +15,7 @@
     <h1>Hi, I'm Marcus</h1>
     <h2>Fullstack Developer</h2>
     <p>Software Engineering student with lots<br>of experience in low-level development.<br>Also occasionally working on front-end.</p>
-    <button>Read More</button>
+    <button on:click={scrollToAbout}>Read More</button>
   </div>
   <img class="portrait" alt="portrait" src="{portraitTitle}"/>
 </section>

@@ -4,7 +4,7 @@
 </script>
 
 <section class="about">
-  <div class="title">
+  <div class="title" id="about">
     <h1>About me</h1>
     <h2>Introduction</h2>
   </div>
