@@ -4,14 +4,14 @@ import { fade } from "svelte/transition"
 import "$lib/styles/fonts.scss"
 import "$lib/styles/style.scss"
 
-import Header from "$lib/components/Header.svelte"
+import Navbar from "$lib/components/Navbar.svelte"
 import Footer from "$lib/components/Footer.svelte"
 
 export let data;
 </script>
 
 
-<Header />
+<Navbar />
 
 {#key data.currentRoute}
   <main in:fade={{ duration: 100, delay: 100 }} out:fade={{ duration: 100 }}>
