@@ -180,11 +180,16 @@
 
 @media (max-width: 1350px) {
   .contact {
-    padding: 10rem 15rem 20rem 15rem;
+    gap: 2rem;
+
+    padding: 10rem 5rem 15rem 5rem;
   }
 }
 
 @media (max-width: 768px) {
-
+  .contact {
+    gap: 1rem;
+    padding: 5rem 5rem 5rem 5rem;
+  }
 }
 </style>
