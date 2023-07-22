@@ -1,4 +1,5 @@
 <script>
+  import { NavArrowRightIcon } from "@indaco/svelte-iconoir/nav-arrow-right";
 </script>
 
 <section class="contact">
@@ -43,11 +44,11 @@
       </div>
       <div>
         <h3>Socials</h3>
-        <p><i class="iconoir-nav-arrow-right"></i><a href="https://github.com/IImpaq">GitHub</a></p>
-        <p><i class="iconoir-nav-arrow-right"></i><a href="https://www.instagram.com/marcus.gugacs/">Instagram</a></p>
-        <p><i class="iconoir-nav-arrow-right"></i><a href="https://twitter.com/Impaq_">Twitter</a></p>
-        <p><i class="iconoir-nav-arrow-right"></i><a href="https://www.twitch.tv/iimpaq">Twitch</a></p>
-        <p><i class="iconoir-nav-arrow-right"></i><a href="/">Discord</a></p>
+        <p><NavArrowRightIcon size="xl" /><a href="https://github.com/IImpaq">GitHub</a></p>
+        <p><NavArrowRightIcon size="xl" /><a href="https://www.instagram.com/marcus.gugacs/">Instagram</a></p>
+        <p><NavArrowRightIcon size="xl" /><a href="https://twitter.com/Impaq_">Twitter</a></p>
+        <p><NavArrowRightIcon size="xl" /><a href="https://www.twitch.tv/iimpaq">Twitch</a></p>
+        <p><NavArrowRightIcon size="xl" /><a href="/">Discord</a></p>
       </div>
     <div>
   </div>
