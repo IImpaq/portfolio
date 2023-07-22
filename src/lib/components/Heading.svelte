@@ -76,12 +76,14 @@
 
 @media (max-width: 1350px) {
   .heading {
-    padding: 20rem 5rem 0 5rem;
+    padding: 10rem 5rem 0 5rem;
   }
 }
 
 @media (max-width: 768px) {
   .heading {
+    padding: 5rem 5rem 0 5rem;
+
     .information {
       align-items: center;
 

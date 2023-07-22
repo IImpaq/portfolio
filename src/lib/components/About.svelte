@@ -11,7 +11,7 @@
   <div class="content">
     <img class="portrait" alt="portrait" src="{portraitAbout}"/>
     <div class="information">
-      <p>My name is Marcus Gugacs and I'm a Software<br>Engineering student at TU Graz right now. My<br>passion is developing games, game engines<br>and low-level applications. The journey of<br>programming started when I was 13 years old<br>while playing Minecraft.<br>It never stopped ever since!</p>
+      <p>My name is Marcus Gugacs and I'm a Software Engineering student at TU Graz right now. My passion is developing games, game engines and low-level applications. The journey of programming started when I was 13 years old while playing Minecraft. It never stopped ever since!</p>
 
       <div class="stats">
         <div class="stat">
@@ -82,6 +82,8 @@
       gap: 2rem;
 
       p {
+        word-wrap: break-word;
+        width: 22rem;
         font-size: 1.1rem;
         padding: 0 0 1.5rem 0;
         margin: 0;
@@ -137,13 +139,34 @@
 
 @media (max-width: 1350px) {
   .about {
-    padding: 20rem 5rem 0 5rem;
+    padding: 10rem 5rem 0 5rem;
   }
 }
 
 @media (max-width: 768px) {
   .about {
-    padding: 20rem 5rem 0rem 5rem;
+    padding: 5rem 5rem 0rem 5rem;
+    gap: 1rem;
+
+    .content {
+      gap: 2rem;
+      .information {
+        p {
+          text-align: justify;
+          width: 16rem;
+        }
+
+        .more {
+          button {
+            font-size: 1rem;
+            width: 6rem;
+          }
+        }
+      }
+      .portrait {
+        max-height: 20rem;
+      }
+    }
   }
 }
 </style>

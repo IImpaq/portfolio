@@ -166,11 +166,6 @@
         flex-direction: row;
         align-items: center;
 
-        i {
-          padding: 0;
-          margin: 0;
-        }
-
         a {
           text-decoration: none;
           padding: 0;
@@ -181,5 +176,15 @@
       }
     }
   }
+}
+
+@media (max-width: 1350px) {
+  .contact {
+    padding: 10rem 15rem 20rem 15rem;
+  }
+}
+
+@media (max-width: 768px) {
+
 }
 </style>

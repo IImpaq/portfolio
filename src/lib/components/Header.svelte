@@ -74,6 +74,7 @@ header {
 
     .navbar {
       ul {
+        gap: 1rem;
         padding: 0;
         flex-direction: column; 
       }
