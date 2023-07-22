@@ -1,5 +1,7 @@
 <script>
-const toggle = () => window.document.body.classList.toggle("dark-mode");
+  import { HalfMoonIcon } from '@indaco/svelte-iconoir/half-moon';
+
+  const toggle = () => window.document.body.classList.toggle("dark-mode");
 </script>
 
 <header>
@@ -7,12 +9,12 @@ const toggle = () => window.document.body.classList.toggle("dark-mode");
 
   <nav class="navbar">
     <ul>
-      <li><a href="/">About</a></li>
-      <li><a href="/projects">Projects</a></li>
-      <li><a href="/resume">Resume</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><button on:click={toggle}><i class="icon iconoir-half-moon"></i></button></li>
+      <li><a class="link" href="/">About</a></li>
+      <li><a class="link" href="/projects">Projects</a></li>
+      <li><a class="link" href="/resume">Resume</a></li>
+      <li><a class="link" href="/blog">Blog</a></li>
+      <li><a class="link" href="/contact">Contact</a></li>
+      <li><button on:click={toggle}><HalfMoonIcon class="link" size="xl" /></button></li>
     </ul>
   </nav>
 </header>
@@ -43,7 +45,7 @@ header {
       gap: 2rem;
 
       li {
-        a {
+        .link {
           text-decoration: none;
           color: inherit;
         }
@@ -54,7 +56,7 @@ header {
           font-size: 1.5rem;
           cursor: pointer;
 
-          i {
+          .link {
             color: var(--text-dark);
           }
         }

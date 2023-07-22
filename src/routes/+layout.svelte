@@ -1,9 +1,11 @@
 <script>
 import { fade } from "svelte/transition"
 
+import "$lib/styles/fonts.scss"
+import "$lib/styles/style.scss"
+
 import Header from "$lib/components/Header.svelte"
 import Footer from "$lib/components/Footer.svelte"
-import "$lib/styles/style.scss"
 
 export let data;
 </script>

@@ -1,13 +1,18 @@
 <script>
+  import { GitHubIcon } from "@indaco/svelte-iconoir/github";
+  import { InstagramIcon } from "@indaco/svelte-iconoir/instagram";
+  import { TwitterIcon } from "@indaco/svelte-iconoir/twitter";
+  import { ModernTvIcon } from "@indaco/svelte-iconoir/modern-tv";
+  import { DiscordIcon } from "@indaco/svelte-iconoir/discord";
 </script>
 
 <footer>
   <div class="socials">
-    <a href="https://github.com/IImpaq"><i class="icon iconoir-github"></i></a>
-    <a href="https://www.instagram.com/marcus.gugacs/"><i class="icon iconoir-instagram"></i></a>
-    <a href="https://twitter.com/Impaq_"><i class="icon iconoir-twitter"></i></a>
-    <a href="https://www.twitch.tv/iimpaq"><i class="icon iconoir-modern-tv"></i></a>
-    <a href="/"><i class="icon iconoir-discord"></i></a>
+    <a href="https://github.com/IImpaq"><GitHubIcon size="2xl" /></a>
+    <a href="https://www.instagram.com/marcus.gugacs/"><InstagramIcon size="2xl" /></a>
+    <a href="https://twitter.com/Impaq_"><TwitterIcon size="2xl" /></a>
+    <a href="https://www.twitch.tv/iimpaq"><ModernTvIcon size="2xl" /></a>
+    <a href="/"><DiscordIcon size="2xl" /></a>
   </div>
   <ul class="links">
     <li class="link"><a href="/">About</a></li>
