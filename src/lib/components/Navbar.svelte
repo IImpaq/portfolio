@@ -1,7 +1,18 @@
 <script>
   import { HalfMoonIcon } from '@indaco/svelte-iconoir/half-moon';
 
-  const toggle = () => window.document.body.classList.toggle("dark-mode");
+  var style = "color: var(--text-dark);";
+
+  const checkForDarkMode = () => {
+    style = window.document.body.classList.contains("dark-mode")
+                ? "color: var(--text-dark); fill: var(--text-dark);"
+                : "color: var(--text-dark);";
+  }
+
+  const toggle = () => {
+    window.document.body.classList.toggle("dark-mode");
+    checkForDarkMode();
+  }
 </script>
 
 <header>
@@ -10,11 +21,10 @@
   <nav class="navbar">
     <ul>
       <li><a class="link" href="/">About</a></li>
-      <li><a class="link" href="/projects">Projects</a></li>
       <li><a class="link" href="/resume">Resume</a></li>
-      <li><a class="link" href="/blog">Blog</a></li>
+      <li><a class="link" href="/projects">Projects</a></li>
       <li><a class="link" href="/contact">Contact</a></li>
-      <li><button on:click={toggle}><HalfMoonIcon class="link" size="xl" /></button></li>
+      <li><button on:click={toggle}><HalfMoonIcon class="link" style={style} size="xl" /></button></li>
     </ul>
   </nav>
 </header>
@@ -55,10 +65,6 @@ header {
           border: none;
           font-size: 1.5rem;
           cursor: pointer;
-
-          .link {
-            color: var(--text-dark);
-          }
         }
       }
     }
@@ -74,6 +80,7 @@ header {
 
     .navbar {
       ul {
+        gap: 1rem;
         padding: 0;
         flex-direction: column; 
       }

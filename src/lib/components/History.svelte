@@ -136,13 +136,13 @@
 
 @media (max-width: 1350px) {
   .history {
-    padding: 20rem 5rem 15rem 5rem;
+    padding: 10rem 5rem 15rem 5rem;
   }
 }
 
 @media (max-width: 768px) {
   .history {
-    padding: 20rem 1rem 15rem 1rem;
+    padding: 5rem 1rem 5rem 1rem;
 
     .timeline {
       display: flex;

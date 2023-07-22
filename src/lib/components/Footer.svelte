@@ -8,17 +8,16 @@
 
 <footer>
   <div class="socials">
-    <a href="https://github.com/IImpaq"><GitHubIcon size="2xl" /></a>
-    <a href="https://www.instagram.com/marcus.gugacs/"><InstagramIcon size="2xl" /></a>
-    <a href="https://twitter.com/Impaq_"><TwitterIcon size="2xl" /></a>
-    <a href="https://www.twitch.tv/iimpaq"><ModernTvIcon size="2xl" /></a>
-    <a href="/"><DiscordIcon size="2xl" /></a>
+    <a href="https://github.com/IImpaq"><GitHubIcon size="2xl" style="color: var(--text-light)" /></a>
+    <a href="https://www.instagram.com/marcus.gugacs/"><InstagramIcon size="2xl" style="color: var(--text-light)" /></a>
+    <a href="https://twitter.com/Impaq_"><TwitterIcon size="2xl" style="color: var(--text-light)" /></a>
+    <a href="https://www.twitch.tv/iimpaq"><ModernTvIcon size="2xl" style="color: var(--text-light)" /></a>
+    <a href="/"><DiscordIcon size="2xl" style="color: var(--text-light)" /></a>
   </div>
   <ul class="links">
     <li class="link"><a href="/">About</a></li>
-    <li class="link"><a href="/projects">Projects</a></li>
     <li class="link"><a href="/resume">Resume</a></li>
-    <li class="link"><a href="/blog">Blog</a></li>
+    <li class="link"><a href="/projects">Projects</a></li>
     <li class="link"><a href="/contact">Contact</a></li>
   </ul>
   <div class="copyright">
@@ -55,6 +54,7 @@ footer {
   .links {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     gap: 2rem;
