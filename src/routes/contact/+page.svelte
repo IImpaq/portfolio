@@ -34,7 +34,12 @@
         <p>iimpaq@proton.me</p>
       </div>
       <div>
+        <h3>Author / Media Owner</h3>
+        <p>Marcus Gugacs</p>
+      </div>
+      <div>
         <h3>Location</h3>
+        <p>2113 Karnabrunn</p>
         <p>Austria</p>
       </div>
       <div>
