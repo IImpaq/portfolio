@@ -31,6 +31,7 @@ main {
 :global(:root) {
   --bg-light: #FFF;
   --bg-dark: #101010;
+  --bg-semi: #EDEDED;
 
   --text-dark: #101010;
   --text-light: #EEE;
@@ -42,6 +43,7 @@ main {
 :global(body.dark-mode) {
   --bg-light: #101010;
   --bg-dark: #FFF;
+  --bg-semi: #242424;
 
   --text-dark: #EEE;
   --text-light: #101010;
