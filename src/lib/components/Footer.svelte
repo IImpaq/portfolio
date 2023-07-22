@@ -16,9 +16,8 @@
   </div>
   <ul class="links">
     <li class="link"><a href="/">About</a></li>
-    <li class="link"><a href="/projects">Projects</a></li>
     <li class="link"><a href="/resume">Resume</a></li>
-    <li class="link"><a href="/blog">Blog</a></li>
+    <li class="link"><a href="/projects">Projects</a></li>
     <li class="link"><a href="/contact">Contact</a></li>
   </ul>
   <div class="copyright">

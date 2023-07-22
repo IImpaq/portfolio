@@ -10,9 +10,8 @@
   <nav class="navbar">
     <ul>
       <li><a class="link" href="/">About</a></li>
-      <li><a class="link" href="/projects">Projects</a></li>
       <li><a class="link" href="/resume">Resume</a></li>
-      <li><a class="link" href="/blog">Blog</a></li>
+      <li><a class="link" href="/projects">Projects</a></li>
       <li><a class="link" href="/contact">Contact</a></li>
       <li><button on:click={toggle}><HalfMoonIcon class="link" size="xl" /></button></li>
     </ul>
