@@ -1,9 +1,44 @@
 <script>
   import { goto } from '$app/navigation';
+  import {flip} from 'svelte/animate';
+  import {fade} from 'svelte/transition';
   import { PtBox3dIcon } from "@indaco/svelte-iconoir/3d-pt-box";
   import { GitHubIcon } from "@indaco/svelte-iconoir/github";
 
   export let data;
+
+  let filterTerm = "";
+  let filteredProjects = data.projects;
+
+
+  let currentTag = "";
+  let allTags = [];
+  let filteredTags = [];
+  for(let project of data.projects) {
+    for(let tag of project.tags) {
+      if(allTags.includes(tag)) continue;
+
+      allTags.push(tag);
+      filteredTags.push(tag);
+    }
+  }
+
+  const filter = () => {
+    filteredProjects = data.projects.filter(project => {
+      let show = true;
+
+      if(filterTerm.length != 0 && !project.title.toLowerCase().includes(filterTerm.toLowerCase())) show = false;
+      if(currentTag.length != 0 && !project.tags.includes(currentTag)) show = false;
+
+      return show;
+    });
+  };
+
+  const clear = () => {
+    filterTerm = "";
+    currentTag = "";
+    filter();
+  };
 </script>
 
 <section class="projects">
@@ -12,27 +47,42 @@
     <h2>Things I worked on</h2>
   </div>
 
+  <div class="preferences">
+    <input type="text" placeholder="Filter by name" bind:value={filterTerm} on:input={filter} />
+    <select placeholder="none" name="tags" id="tags" bind:value={currentTag} on:change={filter} >
+      <option value="" selected disabled hidden>All</option>
+      {#each allTags as tag}
+        <option value={tag}>{tag}</option>
+      {/each}
+    </select>
+    <button on:click|preventDefault={clear}>Clear</button>
+  </div>
+
   <div class="information">
-    {#each data.projects as project}
-      <div class="content" on:click={() => goto(project.url)}>
-        <div class="description">
-          <div class="icons">
-            <PtBox3dIcon size="2xl" />
-            <GitHubIcon size="2xl" />
+    {#if filteredProjects.length == 0}
+      <h1>No results found</h1>
+    {:else}
+      {#each filteredProjects as project (project)}
+        <div class="content" on:click={() => goto(project.url)} in:fade animate:flip={{duration: 0.25}} >
+          <div class="description">
+            <div class="icons">
+              <PtBox3dIcon size="2xl" />
+              <GitHubIcon size="2xl" />
+            </div>
+            <h1>{project.title}</h1>
+            <p>{project.description}</p>
           </div>
-          <h1>{project.title}</h1>
-          <p>{project.description}</p>
-        </div>
-        <div class="meta">
-          <div class="tags">
-            {#each project.tags as tag}
-              <h2>{tag}</h2>
-            {/each}
+          <div class="meta">
+            <div class="tags">
+              {#each project.tags as tag}
+                <h2>{tag}</h2>
+              {/each}
+            </div>
+            <h2>{project.date}</h2>
           </div>
-          <h2>{project.date}</h2>
         </div>
-      </div>
-    {/each}
+      {/each}
+    {/if}
   </div>
 </section>
 
@@ -66,12 +116,54 @@
     }
   }
 
+  .preferences {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    input {
+      border: none;
+      background-color: var(--bg-light);
+      padding: 1rem 1rem 1rem 1rem;
+      color: var(--text-dark);
+      font-family: Poppy, sans-serif;
+      font-size: 1rem;
+      border-bottom: 0.1rem solid var(--text-dark);
+    }
+
+    select {
+      background-color: var(--bg-light);
+      border: none;
+      border-bottom: 0.1rem solid var(--text-dark);
+      font-family: Poppy, sans-serif;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+
+    button {
+      margin: 0;
+      padding: 1rem 2rem 1rem 2rem;
+      font-size: 1.1rem;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      cursor: pointer;
+      border: none;
+      border-radius: 0.5rem;
+    }
+  }
+
   .information {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5rem;
+
+    h1 {
+      font-size: 2.5rem;
+      padding: 8rem 0 0 0;
+      margin: 0;
+    }
 
     .content {
       display: flex;
