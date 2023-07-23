@@ -1,4 +1,5 @@
 <script>
+  import { goto } from '$app/navigation';
   import { PtBox3dIcon } from "@indaco/svelte-iconoir/3d-pt-box";
   import { GitHubIcon } from "@indaco/svelte-iconoir/github";
 
@@ -13,19 +14,21 @@
 
   <div class="information">
     {#each data.projects as project}
-      <div class="content">
-        <div class="icons">
-          <PtBox3dIcon size="2xl" />
-          <GitHubIcon size="2xl" />
-        </div>
-        <header class="header">
-          <h1>{project.title}</h1>
-        </header>
+      <div class="content" on:click={() => goto(project.url)}>
         <div class="description">
+          <div class="icons">
+            <PtBox3dIcon size="2xl" />
+            <GitHubIcon size="2xl" />
+          </div>
+          <h1>{project.title}</h1>
           <p>{project.description}</p>
         </div>
         <div class="meta">
-          <h2>Tags here</h2>
+          <div class="tags">
+            {#each project.tags as tag}
+              <h2>{tag}</h2>
+            {/each}
+          </div>
           <h2>{project.date}</h2>
         </div>
       </div>
@@ -53,44 +56,88 @@
       font-weight: bold;
       padding: 0 0 0.2rem 0;
       margin: 0;
-      text-align: center;
     }
 
+    h2 {
+      font-size: 1.1rem;
+      color: var(--text-semi);
+      padding: 0 0 1.1rem 0;
+      margin: 0;
+    }
   }
 
   .information {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5rem;
 
     .content {
-      .icons {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 0 0 20rem;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 0.5rem;
+      padding: 2.5rem;
+      height: 20rem;
+
+      .description {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 1rem;
+
+        .icons {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          justify-self: flex-start;
+        }
+
+        h1 {
+          font-size: 2rem;
+          font-weight: bold;
+          padding: 0;
+          margin: 0;
+        }
+
+        p {
+          font-size: 1rem;
+          color: var(--text-semi);
+          padding: 0;
+          margin: 0;
+        }
       }
 
       .meta {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        justify-self: flex-end;
+
+        .tags {
+          display: flex;
+          flex-direction:row;
+          align-items: center;
+          gap: 1rem;
+
+          h2 {
+            font-size: 0.8rem;
+            color: var(--text-semi);
+            padding: 0;
+            margin: 0;
+          }
+        }
 
         h2 {
-          font-size: 1.1rem;
+          font-size: 1.0rem;
           color: var(--text-semi);
-          padding: 0 0 1.1rem 0;
+          padding: 0;
           margin: 0;
-          text-align: center;
         }
       }
-
-      cursor: pointer;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      padding: 2rem;
-      border-radius: 0.5rem;
-      width: 100%;
     }
   }
 }
