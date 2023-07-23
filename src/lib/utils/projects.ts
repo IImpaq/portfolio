@@ -9,7 +9,9 @@ export const fetchProjects = async () => {
       return {
         title: metadata.title,
         date: metadata.date,
-        description: metadata.preview
+        url: metadata.url,
+        description: metadata.preview,
+        tags: metadata.tags
       }
     })
   );
