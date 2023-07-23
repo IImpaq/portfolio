@@ -119,6 +119,8 @@
   .preferences {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 
     input {
@@ -234,22 +236,22 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1300px) {
   .projects {
+    padding: 5rem 5rem 5rem 5rem;
+
     .information {
-      .content {
-        width:calc(100% / 3);
-      }
+      width: 100%;
     }
   }
 }
 
-@media (min-width: 1350px) {
+@media (max-width: 768px) {
   .projects {
+    padding: 10rem 5rem 15rem 5rem;
+
     .information {
-      .content {
-        width:calc(100% / 4);
-      }
+      width: 100%;
     }
   }
 }
