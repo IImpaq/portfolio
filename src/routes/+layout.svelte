@@ -37,7 +37,7 @@ main {
   --text-light: #EEE;
   --text-semi: #707070;
 
-  --box-shadow: rgba(0, 0, 0, 0.25);
+  --box-shadow: rgba(0, 0, 0, 0.24);
 }
 
 :global(body.dark-mode) {
@@ -49,6 +49,6 @@ main {
   --text-light: #101010;
   --text-semi: #AAA;
 
-  --box-shadow: rgba(255, 255, 255, 0.2);
+  --box-shadow: rgba(255, 255, 255, 0.24);
 }
 </style>

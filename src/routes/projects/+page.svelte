@@ -79,7 +79,7 @@
       justify-content: space-between;
       flex: 0 0 20rem;
       cursor: pointer;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      box-shadow: var(--box-shadow) 0px 3px 8px;
       border-radius: 0.5rem;
       padding: 2.5rem;
       height: 20rem;
