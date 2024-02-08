@@ -66,7 +66,7 @@
       <h1>No results found</h1>
     {:else}
       {#each filteredProjects as project (project)}
-        <div class="content" on:click={() => goto(project.url)} in:fade animate:flip={{duration: 0.25}} >
+        <div class="content" on:click={() => { window.open(project.url); }} in:fade animate:flip={{duration: 0.25}} >
           <div class="description">
             <div class="icons">
               <Box3dPointIcon size="base" />
