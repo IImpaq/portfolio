@@ -55,7 +55,7 @@
         <p><NavArrowRightIcon size="sm" /><a href="https://www.twitch.tv/iimpaq">Twitch</a></p>
         <p><NavArrowRightIcon size="sm" /><a href="/">Discord</a></p>
       </div>
-    <div>
+    </div>
   </div>
 </section>
 

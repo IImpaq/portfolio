@@ -12,6 +12,9 @@
 
 
   let currentTag = "";
+  /**
+   * @type {any[]}
+   */
   let allTags = [];
   let filteredTags = [];
   for(let project of data.projects) {
@@ -27,8 +30,8 @@
     filteredProjects = data.projects.filter(project => {
       let show = true;
 
-      if(filterTerm.length != 0 && !project.title.toLowerCase().includes(filterTerm.toLowerCase())) show = false;
-      if(currentTag.length != 0 && !project.tags.includes(currentTag)) show = false;
+      if(filterTerm.length !== 0 && !project.title.toLowerCase().includes(filterTerm.toLowerCase())) show = false;
+      if(currentTag.length !== 0 && !project.tags.includes(currentTag)) show = false;
 
       return show;
     });
@@ -49,7 +52,7 @@
 
   <div class="preferences">
     <input type="text" placeholder="Filter by name" bind:value={filterTerm} on:input={filter} />
-    <select placeholder="none" name="tags" id="tags" bind:value={currentTag} on:change={filter} >
+    <select name="tags" id="tags" bind:value={currentTag} on:change={filter} >
       <option value="" selected disabled hidden>All</option>
       {#each allTags as tag}
         <option value={tag}>{tag}</option>
@@ -59,7 +62,7 @@
   </div>
 
   <div class="information">
-    {#if filteredProjects.length == 0}
+    {#if filteredProjects.length === 0}
       <h1>No results found</h1>
     {:else}
       {#each filteredProjects as project (project)}
@@ -173,7 +176,7 @@
       justify-content: space-between;
       flex: 0 0 20rem;
       cursor: pointer;
-      box-shadow: var(--box-shadow) 0px 3px 8px;
+      box-shadow: var(--box-shadow) 0 3px 8px;
       border-radius: 0.5rem;
       padding: 2.5rem;
       height: 20rem;

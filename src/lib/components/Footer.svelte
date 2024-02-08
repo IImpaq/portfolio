@@ -28,7 +28,7 @@
 <style lang="scss">
 footer {
   background-color: var(--bg-dark);
-  padding: 4rem 0rem;
+  padding: 4rem 0;
   width: 100%;
   margin: auto 0;
   display: flex;

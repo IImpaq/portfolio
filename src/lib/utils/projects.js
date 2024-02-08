@@ -16,10 +16,8 @@ export const fetchProjects = async () => {
     })
   );
 
-  const sortedProjects = projects.sort((a, b) => {
+  return projects.sort((a, b) => {
     return (a.date < b.date);
   });
-
-  return sortedProjects;
 }
 

@@ -98,7 +98,7 @@
   }
 
   .content {
-    padding: 0rem 1.75rem;
+    padding: 0 1.75rem;
     transition: 0.4s ease;
     overflow-wrap: break-word !important;
     display: flex;
@@ -130,7 +130,7 @@
   }
 
   .component {
-    margin: 0px 20px 20px 20px;
+    margin: 0 20px 20px 20px;
   }
 }
 

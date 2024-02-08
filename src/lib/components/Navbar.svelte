@@ -1,7 +1,7 @@
 <script>
   import { HalfMoonIcon } from '@indaco/svelte-iconoir/half-moon';
 
-  var style = "color: var(--text-dark);";
+  let style = "color: var(--text-dark);";
 
   const checkForDarkMode = () => {
     style = window.document.body.classList.contains("dark-mode")

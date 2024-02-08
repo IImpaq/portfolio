@@ -63,7 +63,7 @@
       border-radius: 0.5rem;
       color: var(--text-light);
       font-size: 1rem;
-      font-weight: medium; 
+      font-weight: normal;
       cursor: pointer;
     }
   }

@@ -14,10 +14,8 @@ export const fetchResume = async () => {
     })
   );
 
-  const sortedPosts = posts.sort((a, b) => {
-    return (a.date < b.date);
+  return posts.sort((a, b) => {
+      return (a.date < b.date);
   });
-
-  return sortedPosts;
 }
 
