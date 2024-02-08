@@ -3,7 +3,7 @@ export const fetchProjects = async () => {
   const projectObjs = Object.entries(projectFiles);
 
   const projects = await Promise.all(
-    projectObjs.map(async ([path, resolver]) => {
+    projectObjs.map(async ([, resolver]) => {
       const { metadata } = await resolver();
 
       return {

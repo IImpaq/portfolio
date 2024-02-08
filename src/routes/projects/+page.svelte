@@ -1,8 +1,8 @@
 <script>
   import { goto } from '$app/navigation';
-  import {flip} from 'svelte/animate';
-  import {fade} from 'svelte/transition';
-  import { PtBox3dIcon } from "@indaco/svelte-iconoir/3d-pt-box";
+  import { flip } from 'svelte/animate';
+  import { fade } from 'svelte/transition';
+  import { Box3dPointIcon } from "@indaco/svelte-iconoir/box-3d-point";
   import { GitHubIcon } from "@indaco/svelte-iconoir/github";
 
   export let data;
@@ -66,8 +66,8 @@
         <div class="content" on:click={() => goto(project.url)} in:fade animate:flip={{duration: 0.25}} >
           <div class="description">
             <div class="icons">
-              <PtBox3dIcon size="2xl" />
-              <GitHubIcon size="2xl" />
+              <Box3dPointIcon size="base" />
+              <GitHubIcon size="base" />
             </div>
             <h1>{project.title}</h1>
             <p>{project.description}</p>

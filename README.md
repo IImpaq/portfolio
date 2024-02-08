@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-## Context 
+## Context
 
 This website is intended for the sole purpose of representing my personal portfolio.
 
@@ -13,4 +13,3 @@ As stated above, this project was done by myself to represent my portfolio. It s
 ## Contact
 
 If you have any questions and want to get in contact with me, just [send me an email](mailto:iimpaq@proton.me)
-

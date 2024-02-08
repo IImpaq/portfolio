@@ -24,7 +24,7 @@
       <li><a class="link" href="/resume">Resume</a></li>
       <li><a class="link" href="/projects">Projects</a></li>
       <li><a class="link" href="/contact">Contact</a></li>
-      <li><button on:click={toggle}><HalfMoonIcon class="link" style={style} size="xl" /></button></li>
+      <li><button on:click={toggle}><HalfMoonIcon class="link" style={style} size="xs" /></button></li>
     </ul>
   </nav>
 </header>

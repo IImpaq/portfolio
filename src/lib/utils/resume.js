@@ -3,7 +3,7 @@ export const fetchResume = async () => {
   const postObjs = Object.entries(postFiles);
 
   const posts = await Promise.all(
-    postObjs.map(async ([path, resolver]) => {
+    postObjs.map(async ([, resolver]) => {
       const { metadata } = await resolver();
 
       return {
