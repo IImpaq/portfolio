@@ -58,14 +58,14 @@
   .information {
     display: flex;
     flex-direction: column;
-    align-items: top;
+    align-items: flex-start;
     gap: 5rem;
     width: 100%;
 
     .content {
       display: flex;
       flex-direction: row;
-      align-items: top;
+      align-items: flex-start;
       justify-content: center;
       gap: 2rem;
       color: var(--text-light);

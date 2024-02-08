@@ -42,7 +42,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20rem 15rem 0rem 15rem;
+  padding: 20rem 15rem 0 15rem;
   gap: 5rem;
 
   .title {
@@ -85,7 +85,6 @@
         word-wrap: break-word;
         width: 22rem;
         font-size: 1.1rem;
-        padding: 0 0 1.5rem 0;
         margin: 0;
         padding: 0;
       }
@@ -101,7 +100,7 @@
           border-radius: 0.5rem;
           color: var(--text-light);
           font-size: 1rem;
-          font-weight: medium; 
+          font-weight: normal;
           cursor: pointer;
         }
       }
@@ -145,7 +144,7 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: 5rem 5rem 0rem 5rem;
+    padding: 5rem 5rem 0 5rem;
     gap: 1rem;
 
     .content {

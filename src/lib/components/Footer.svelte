@@ -8,11 +8,11 @@
 
 <footer>
   <div class="socials">
-    <a href="https://github.com/IImpaq"><GitHubIcon size="2xl" style="color: var(--text-light)" /></a>
-    <a href="https://www.instagram.com/marcus.gugacs/"><InstagramIcon size="2xl" style="color: var(--text-light)" /></a>
-    <a href="https://twitter.com/Impaq_"><TwitterIcon size="2xl" style="color: var(--text-light)" /></a>
-    <a href="https://www.twitch.tv/iimpaq"><ModernTvIcon size="2xl" style="color: var(--text-light)" /></a>
-    <a href="/"><DiscordIcon size="2xl" style="color: var(--text-light)" /></a>
+    <a href="https://github.com/IImpaq"><GitHubIcon size="xs" style="color: var(--text-light)" /></a>
+    <a href="https://www.instagram.com/mgugacs/"><InstagramIcon size="xs" style="color: var(--text-light)" /></a>
+    <a href="https://twitter.com/Impaq_"><TwitterIcon size="xs" style="color: var(--text-light)" /></a>
+    <a href="https://www.twitch.tv/iimpaq"><ModernTvIcon size="xs" style="color: var(--text-light)" /></a>
+    <a href="/"><DiscordIcon size="xs" style="color: var(--text-light)" /></a>
   </div>
   <ul class="links">
     <li class="link"><a href="/">About</a></li>
@@ -21,14 +21,14 @@
     <li class="link"><a href="/contact">Contact</a></li>
   </ul>
   <div class="copyright">
-    <p>Marcus Gugacs © 2023</p>
+    <p>Marcus Gugacs © 2023-2024</p>
   </div>
 </footer>
 
 <style lang="scss">
 footer {
   background-color: var(--bg-dark);
-  padding: 4rem 0rem;
+  padding: 4rem 0;
   width: 100%;
   margin: auto 0;
   display: flex;

@@ -1,8 +1,8 @@
 <script>
   import { goto } from '$app/navigation';
-  import {flip} from 'svelte/animate';
-  import {fade} from 'svelte/transition';
-  import { PtBox3dIcon } from "@indaco/svelte-iconoir/3d-pt-box";
+  import { flip } from 'svelte/animate';
+  import { fade } from 'svelte/transition';
+  import { Box3dPointIcon } from "@indaco/svelte-iconoir/box-3d-point";
   import { GitHubIcon } from "@indaco/svelte-iconoir/github";
 
   export let data;
@@ -12,6 +12,9 @@
 
 
   let currentTag = "";
+  /**
+   * @type {any[]}
+   */
   let allTags = [];
   let filteredTags = [];
   for(let project of data.projects) {
@@ -27,8 +30,8 @@
     filteredProjects = data.projects.filter(project => {
       let show = true;
 
-      if(filterTerm.length != 0 && !project.title.toLowerCase().includes(filterTerm.toLowerCase())) show = false;
-      if(currentTag.length != 0 && !project.tags.includes(currentTag)) show = false;
+      if(filterTerm.length !== 0 && !project.title.toLowerCase().includes(filterTerm.toLowerCase())) show = false;
+      if(currentTag.length !== 0 && !project.tags.includes(currentTag)) show = false;
 
       return show;
     });
@@ -49,7 +52,7 @@
 
   <div class="preferences">
     <input type="text" placeholder="Filter by name" bind:value={filterTerm} on:input={filter} />
-    <select placeholder="none" name="tags" id="tags" bind:value={currentTag} on:change={filter} >
+    <select name="tags" id="tags" bind:value={currentTag} on:change={filter} >
       <option value="" selected disabled hidden>All</option>
       {#each allTags as tag}
         <option value={tag}>{tag}</option>
@@ -59,15 +62,15 @@
   </div>
 
   <div class="information">
-    {#if filteredProjects.length == 0}
+    {#if filteredProjects.length === 0}
       <h1>No results found</h1>
     {:else}
       {#each filteredProjects as project (project)}
-        <div class="content" on:click={() => goto(project.url)} in:fade animate:flip={{duration: 0.25}} >
+        <div class="content" on:click={() => { window.open(project.url); }} in:fade animate:flip={{duration: 0.25}} >
           <div class="description">
             <div class="icons">
-              <PtBox3dIcon size="2xl" />
-              <GitHubIcon size="2xl" />
+              <Box3dPointIcon size="base" />
+              <GitHubIcon size="base" />
             </div>
             <h1>{project.title}</h1>
             <p>{project.description}</p>
@@ -173,7 +176,7 @@
       justify-content: space-between;
       flex: 0 0 20rem;
       cursor: pointer;
-      box-shadow: var(--box-shadow) 0px 3px 8px;
+      box-shadow: var(--box-shadow) 0 3px 8px;
       border-radius: 0.5rem;
       padding: 2.5rem;
       height: 20rem;
