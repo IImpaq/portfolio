@@ -1,5 +1,4 @@
 <script>
-  import { goto } from '$app/navigation';
   import { flip } from 'svelte/animate';
   import { fade } from 'svelte/transition';
   import { Box3dPointIcon } from "@indaco/svelte-iconoir/box-3d-point";
