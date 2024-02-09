@@ -3,6 +3,7 @@
   import { fade } from 'svelte/transition';
   import { Box3dPointIcon } from "@indaco/svelte-iconoir/box-3d-point";
   import { GitHubIcon } from "@indaco/svelte-iconoir/github";
+  import tilt from "$lib/utils/tilt.js";
 
   export let data;
 
@@ -65,7 +66,7 @@
       <h1>No results found</h1>
     {:else}
       {#each filteredProjects as project (project)}
-        <div class="content" on:click={() => { window.open(project.url); }} in:fade animate:flip={{duration: 0.25}} >
+        <div class="content" use:tilt={{limit: 10, scale:1.025, duration:100}} on:click={() => { window.open(project.url); }} in:fade animate:flip={{duration: 0.25}} >
           <div class="description">
             <div class="icons">
               <Box3dPointIcon size="base" />
