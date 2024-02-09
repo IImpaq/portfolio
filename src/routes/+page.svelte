@@ -7,4 +7,3 @@
 <Heading />
 <About />
 <History />
-

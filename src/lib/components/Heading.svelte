@@ -1,5 +1,6 @@
 <script>
   import portraitTitle from "$lib/assets/portrait-title.jpg";
+  import tilt from "$lib/utils/tilt.js";
 
   const scrollToAbout = () => {
     const el = document.querySelector("#about");
@@ -17,7 +18,7 @@
     <p>Software Engineering student with lots<br>of experience in low-level development.<br>Also occasionally working on front-end.</p>
     <button on:click={scrollToAbout}>Read More</button>
   </div>
-  <img class="portrait" alt="portrait" src="{portraitTitle}"/>
+  <img class="portrait" use:tilt={{ limit: 10 }} alt="portrait" src="{portraitTitle}"/>
 </section>
 
 <style lang="scss">
@@ -71,6 +72,9 @@
   .portrait {
     max-height: 20rem;
     border-radius: 28% 72% 65% 35% / 34% 45% 55% 66%;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--rotateX)) rotateY(var(--rotateY));
+    outline: 1px solid transparent;
   }
 }
 
