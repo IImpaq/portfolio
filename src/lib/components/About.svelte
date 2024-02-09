@@ -1,6 +1,7 @@
 <script>
   import { goto } from '$app/navigation';
   import portraitAbout from "$lib/assets/portrait-about.jpg";
+  import tilt from "$lib/utils/tilt.js";
 </script>
 
 <section class="about">
@@ -9,7 +10,7 @@
     <h2>Introduction</h2>
   </div>
   <div class="content">
-    <img class="portrait" alt="portrait" src="{portraitAbout}"/>
+    <img class="portrait" use:tilt={{ limit: 10 }} alt="portrait" src="{portraitAbout}"/>
     <div class="information">
       <p>My name is Marcus Gugacs and I'm a Software Engineering student at TU Graz right now. My passion is developing games, game engines and low-level applications. The journey of programming started when I was 13 years old while playing Minecraft. It never stopped ever since!</p>
 
@@ -132,6 +133,15 @@
     .portrait {
       max-height: 30rem;
       border-radius: 1rem;
+      transform-style: preserve-3d;
+      transform: rotateX(var(--rotateX)) rotateY(var(--rotateY));
+      outline: 1px solid transparent;
+    }
+
+    .portrait::before {
+      inset: 0.75rem;
+      background: black;
+      transform: translateZ(-49px);
     }
   }
 }
