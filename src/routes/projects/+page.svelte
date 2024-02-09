@@ -66,7 +66,7 @@
       <h1>No results found</h1>
     {:else}
       {#each filteredProjects as project (project)}
-        <div class="content" use:tilt={{limit: 10, scale:1.025, duration:100}} on:click={() => { window.open(project.url); }} in:fade animate:flip={{duration: 0.25}} >
+        <button class="content" use:tilt={{limit: 10, scale:1.025, duration:100}} on:click={() => { window.open(project.url); }} in:fade animate:flip={{duration: 0.25}} >
           <div class="description">
             <div class="icons">
               <Box3dPointIcon size="base" />
@@ -83,7 +83,7 @@
             </div>
             <h2>{project.date}</h2>
           </div>
-        </div>
+        </button>
       {/each}
     {/if}
   </div>
@@ -95,7 +95,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10rem 15rem 20rem 15rem;
+  padding: 10rem 15rem 10rem 15rem;
   gap: 5rem;
 
   .title {
@@ -158,10 +158,11 @@
   }
 
   .information {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    grid-auto-rows: 1fr;
+    grid-auto-flow: dense;
     gap: 5rem;
 
     h1 {
@@ -172,14 +173,15 @@
 
     .content {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
+      flex-direction: column;
       flex: 0 0 20rem;
       cursor: pointer;
       box-shadow: var(--box-shadow) 0 3px 8px;
       border-radius: 0.5rem;
       padding: 2.5rem;
-      height: 20rem;
+      background: #FFFFFF;
+      border-style: none;
 
       .description {
         display: flex;
@@ -205,6 +207,7 @@
           color: var(--text-semi);
           padding: 0;
           margin: 0;
+          text-align: justify;
         }
       }
 
@@ -242,20 +245,12 @@
 @media (max-width: 1300px) {
   .projects {
     padding: 5rem 5rem 5rem 5rem;
-
-    .information {
-      width: 100%;
-    }
   }
 }
 
 @media (max-width: 768px) {
   .projects {
-    padding: 10rem 5rem 15rem 5rem;
-
-    .information {
-      width: 100%;
-    }
+    padding: 5rem 0 5rem 0;
   }
 }
 </style>
