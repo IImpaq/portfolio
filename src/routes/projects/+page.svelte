@@ -180,7 +180,7 @@
       box-shadow: var(--box-shadow) 0 3px 8px;
       border-radius: 0.5rem;
       padding: 2.5rem;
-      background: #FFFFFF;
+      background: var(--bg-light);
       border-style: none;
 
       .description {
@@ -193,9 +193,11 @@
           flex-direction: row;
           justify-content: space-between;
           justify-self: flex-start;
+          color: var(--text-dark);
         }
 
         h1 {
+          color: var(--text-dark);
           font-size: 2rem;
           font-weight: bold;
           padding: 0;
