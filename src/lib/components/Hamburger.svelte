@@ -1,13 +1,11 @@
 <script>
   export let opened = true;
-  export let onClick = () => {
-      opened = !opened;
-  }
+  export let onClick = () => opened = !opened;
   export let size = "10vw";
 </script>
 
 
-<button on:click={onClick} aria-label={"open-navigation-menu"}>
+<button on:click={onClick} aria-label="open-navigation-menu">
   <svg width="{size}"
        height="{size}"
        stroke-width="0.4vw"
