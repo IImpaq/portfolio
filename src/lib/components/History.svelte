@@ -44,8 +44,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20rem 15rem 15rem 15rem;
-  gap: 5rem;
+  padding: min(20rem, 15vw) min(15rem, 7.5vw) min(15rem, 7.5vw) min(15rem, 7.5vw);
+  gap: min(5rem, 5vw);
 
   .title {
     display: flex;
@@ -134,16 +134,8 @@
   }
 }
 
-@media (max-width: 1350px) {
-  .history {
-    padding: 10rem 5rem 15rem 5rem;
-  }
-}
-
 @media (max-width: 768px) {
   .history {
-    padding: 5rem 1rem 5rem 1rem;
-
     .timeline {
       display: flex;
       flex-direction: column;

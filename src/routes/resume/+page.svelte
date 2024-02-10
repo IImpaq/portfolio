@@ -29,8 +29,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10rem 15rem 20rem 15rem;
-  gap: 5rem;
+  padding: min(20rem, 15vw) min(15rem, 7.5vw) min(15rem, 10vw) min(15rem, 7.5vw);
+  gap: min(5rem, 5vw);
 
   .title {
     display: flex;
@@ -59,22 +59,22 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 5rem;
     width: 100%;
+    gap: min(5rem, 10vw);
 
     .content {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
       justify-content: center;
-      gap: 2rem;
+      gap: min(2rem, 3vw);
       color: var(--text-light);
 
       .header {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        gap: 0.5rem;
+        gap: min(2rem, 3vw);
 
         h1 {
           text-align: right;
@@ -111,8 +111,6 @@
 
 @media (max-width: 1152px) {
   .resume {
-    padding: 10rem 2.5rem 20rem 2.5rem;
-
     .information {
       .content {
         flex-wrap: wrap;

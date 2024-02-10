@@ -28,7 +28,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 20rem 15rem 0 15rem;
+  padding: min(20rem, 15vw) min(15rem, 7.5vw) 0 min(15rem, 7.5vw);
   gap: 5rem;
 
   .information {
@@ -70,7 +70,7 @@
   }
 
   .portrait {
-    max-height: 20rem;
+    max-height: min(20rem, 50vw);
     border-radius: 28% 72% 65% 35% / 34% 45% 55% 66%;
     transform-style: preserve-3d;
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY));
@@ -78,16 +78,8 @@
   }
 }
 
-@media (max-width: 1350px) {
-  .heading {
-    padding: 10rem 5rem 0 5rem;
-  }
-}
-
 @media (max-width: 768px) {
   .heading {
-    padding: 5rem 5rem 0 5rem;
-
     .information {
       align-items: center;
 
@@ -102,10 +94,6 @@
       p {
         text-align: center;
       }
-    }
-
-    .portrait {
-      max-height: 15rem;
     }
   }
 }

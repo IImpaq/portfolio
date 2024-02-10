@@ -35,10 +35,10 @@
   {#if opened || navbarWidth >= 768}
     <nav class="navbar">
       <ul>
-        <li><a class="link" href="/">About</a></li>
-        <li><a class="link" href="/resume">Resume</a></li>
-        <li><a class="link" href="/projects">Projects</a></li>
-        <li><a class="link" href="/contact">Contact</a></li>
+        <li><a class="link" href="/" on:click="{onClick}">About</a></li>
+        <li><a class="link" href="/resume" on:click="{onClick}">Resume</a></li>
+        <li><a class="link" href="/projects" on:click="{onClick}">Projects</a></li>
+        <li><a class="link" href="/contact" on:click="{onClick}">Contact</a></li>
         <li><button on:click={toggle}><HalfMoonIcon class="link" style={style} size="xs" /></button></li>
       </ul>
     </nav>
@@ -110,8 +110,6 @@ header {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    // padding: 1rem 2.5rem;
-    // padding: min(5vw, 2.5rem);
 
     .navbar {
       ul {
