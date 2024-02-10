@@ -45,7 +45,7 @@
   align-items: center;
   justify-content: center;
   padding: min(20rem, 15vw) min(15rem, 7.5vw) min(15rem, 7.5vw) min(15rem, 7.5vw);
-  gap: 5rem;
+  gap: min(5rem, 5vw);
 
   .title {
     display: flex;
