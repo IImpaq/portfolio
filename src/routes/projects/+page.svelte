@@ -95,7 +95,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10rem 15rem 10rem 15rem;
+  padding: min(10rem, 15vw) min(15rem, 5vw) min(10rem, 15vw) min(15rem, 5vw);
   gap: 5rem;
 
   .title {
@@ -163,7 +163,7 @@
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
     grid-auto-rows: 1fr;
     grid-auto-flow: dense;
-    gap: 5rem;
+    gap: min(2.5rem, 10vw);
 
     h1 {
       font-size: 2.5rem;
@@ -217,7 +217,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        justify-self: flex-end;
 
         .tags {
           display: flex;
@@ -241,18 +240,6 @@
         }
       }
     }
-  }
-}
-
-@media (max-width: 1300px) {
-  .projects {
-    padding: 5rem 5rem 5rem 5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .projects {
-    padding: 5rem 0 5rem 0;
   }
 }
 </style>
