@@ -110,8 +110,6 @@ header {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    // padding: 1rem 2.5rem;
-    // padding: min(5vw, 2.5rem);
 
     .navbar {
       ul {
