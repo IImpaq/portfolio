@@ -65,8 +65,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10rem 15rem 20rem 15rem;
-  gap: 5rem;
+  padding: min(20rem, 15vw) min(15rem, 7.5vw) min(15rem, 10vw) min(15rem, 7.5vw);
+  gap: min(5rem, 5vw);
 
   .title {
     display: flex;
@@ -178,18 +178,11 @@
   }
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 782px) {
   .contact {
-    gap: 2rem;
-
-    padding: 10rem 5rem 15rem 5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact {
-    gap: 1rem;
-    padding: 5rem 5rem 5rem 5rem;
+    .details {
+      text-align: center;
+    }
   }
 }
 </style>
