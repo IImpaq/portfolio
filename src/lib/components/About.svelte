@@ -2,6 +2,8 @@
   import { goto } from '$app/navigation';
   import portraitAbout from "$lib/assets/portrait-about.jpg";
   import tilt from "$lib/utils/tilt.js";
+
+  const currentYear = new Date().getFullYear();
 </script>
 
 <section class="about">
@@ -16,16 +18,16 @@
 
       <div class="stats">
         <div class="stat">
-          <h2>09</h2>
+          <h2>3</h2>
+          <h3>Jobs</h3>
+        </div>
+        <div class="stat">
+          <h2>{currentYear-2013}</h2>
           <h3>Years<br>Experience</h3>
         </div>
         <div class="stat">
-          <h2>117</h2>
+          <h2>132.5</h2>
           <h3>ECTS</h3>
-        </div>
-        <div class="stat">
-          <h2>3</h2>
-          <h3>Jobs</h3>
         </div>
       </div>
 
@@ -43,8 +45,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20rem 15rem 0 15rem;
-  gap: 5rem;
+  padding: min(20rem, 15vw) min(15rem, 7.5vw) 0 min(15rem, 7.5vw);
+  gap: min(5rem, 5vw);
 
   .title {
     display: flex;
@@ -74,17 +76,18 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 5rem;
+    gap: min(5rem, 5vw);
 
     .information {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 2rem;
+      gap: min(2rem, 5vw);
 
       p {
         word-wrap: break-word;
-        width: 22rem;
+        text-align: justify;
+        width: min(22rem, 55vw);
         font-size: 1.1rem;
         margin: 0;
         padding: 0;
@@ -94,7 +97,7 @@
         justify-content: space-evenly;
 
         button {
-          width: 8rem;
+          width: min(8rem, 22.5vw);
           height: 3rem;
           background-color: var(--bg-dark);
           border: none;
@@ -131,7 +134,7 @@
     }
 
     .portrait {
-      max-height: 30rem;
+      max-height: min(30rem, 75vw);
       border-radius: 1rem;
       transform-style: preserve-3d;
       transform: rotateX(var(--rotateX)) rotateY(var(--rotateY));
@@ -142,39 +145,6 @@
       inset: 0.75rem;
       background: black;
       transform: translateZ(-49px);
-    }
-  }
-}
-
-@media (max-width: 1350px) {
-  .about {
-    padding: 10rem 5rem 0 5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .about {
-    padding: 5rem 5rem 0 5rem;
-    gap: 1rem;
-
-    .content {
-      gap: 2rem;
-      .information {
-        p {
-          text-align: justify;
-          width: 16rem;
-        }
-
-        .more {
-          button {
-            font-size: 1rem;
-            width: 6rem;
-          }
-        }
-      }
-      .portrait {
-        max-height: 20rem;
-      }
     }
   }
 }
