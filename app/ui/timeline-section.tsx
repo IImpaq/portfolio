@@ -6,23 +6,10 @@ import TimelineItem from "@/app/ui/timeline-item";
 const TimelineSection = () => {
   const timelineItems = [
     {
-      icon: FiBriefcase,
-      title: "Senior Software Engineer",
-      organization: "Tech Innovators Inc.",
-      period: "2020 - Present"
-    },
-    {icon: FiBriefcase, title: "Graphics Engineer", organization: "GameCraft Studios", period: "2017 - 2020"},
-    {
-      icon: FiAward,
-      title: "Master's in Computer Science",
-      organization: "University of Technology",
-      period: "2015 - 2017"
-    },
-    {
       icon: FiBook,
       title: "Bachelor's in Software Engineering",
-      organization: "State University",
-      period: "2011 - 2015"
+      organization: "Graz University of Technology",
+      period: "2021 - Now"
     },
   ];
 
