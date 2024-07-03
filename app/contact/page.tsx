@@ -8,6 +8,7 @@ import {FiMail, FiGithub, FiLinkedin, FiSend, FiMapPin} from 'react-icons/fi';
 import Navbar from '@/app/ui/navbar';
 import ContactItem from "@/app/ui/contact-item";
 import DynamicGrid from "@/app/ui/dynamic-grid";
+import Footer from "@/app/ui/footer";
 
 const Contact: NextPage = () => {
   const [name, setName] = useState('');
@@ -132,6 +133,8 @@ const Contact: NextPage = () => {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };

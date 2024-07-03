@@ -7,6 +7,7 @@ import { FiGithub, FiExternalLink } from "react-icons/fi";
 import Navbar from "@/app/ui/navbar";
 import {usePathname} from "next/navigation";
 import DynamicGrid from "@/app/ui/dynamic-grid";
+import Footer from "@/app/ui/footer";
 
 const projectsData = {
   "advanced-game-engine": {
@@ -128,6 +129,8 @@ const ProjectDetail = () => {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };

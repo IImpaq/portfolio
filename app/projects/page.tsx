@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/app/ui/navbar";
 import DynamicGrid from "@/app/ui/dynamic-grid";
 import ProjectCard from "@/app/ui/project-card";
+import Footer from "@/app/ui/footer";
 
 const Projects: NextPage = () => {
   return (
@@ -64,6 +65,8 @@ const Projects: NextPage = () => {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };
