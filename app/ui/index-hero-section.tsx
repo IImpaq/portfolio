@@ -4,7 +4,7 @@ import {motion} from "framer-motion";
 import Link from "next/link";
 import {FiChevronDown} from "react-icons/fi";
 
-const HeroSection = () => (
+const IndexHeroSection = () => (
   <section className="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center relative">
     <motion.h1 className="text-5xl md:text-7xl font-bold mb-6" initial={{opacity: 0, y: -20}}
                animate={{opacity: 1, y: 0}} transition={{duration: 0.8}}>
@@ -33,4 +33,4 @@ const HeroSection = () => (
   </section>
 );
 
-export default HeroSection;
+export default IndexHeroSection;
