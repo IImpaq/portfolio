@@ -4,7 +4,7 @@ import Navbar from "@/app/ui/navbar";
 import Footer from "@/app/ui/footer";
 import DynamicGrid from "@/app/ui/dynamic-grid";
 import IndexHeroSection from "@/app/ui/index-hero-section";
-import ExpertiseSection from "@/app/ui/expertise-section";
+import IndexExpertiseSection from "@/app/ui/index-expertise-section";
 import ProjectsSection from "@/app/ui/projects-section";
 import CtaSection from "@/app/ui/cta-section";
 
@@ -24,7 +24,7 @@ const Home = () => {
 
         <div className="relative z-10 container mx-auto px-4">
           <IndexHeroSection/>
-          <ExpertiseSection/>
+          <IndexExpertiseSection/>
           <ProjectsSection/>
           <CtaSection/>
         </div>

@@ -3,7 +3,7 @@
 import {FiCode, FiGlobe, FiLayers} from "react-icons/fi";
 import {motion} from "framer-motion";
 
-const ExpertiseSection = () => {
+const IndexExpertiseSection = () => {
   const areas = [
     {icon: FiCode, title: "Computer Graphics", description: "Crafting immersive visual experiences"},
     {icon: FiLayers, title: "Game Engine Development", description: "Building the foundations of interactive worlds" },
@@ -32,4 +32,4 @@ const ExpertiseSection = () => {
   );
 };
 
-export default ExpertiseSection;
+export default IndexExpertiseSection;
