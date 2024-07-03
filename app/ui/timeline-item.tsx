@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 
+// @ts-ignore
 const TimelineItem = ({item, index}) => {
   const [isVisible, setIsVisible] = useState(false);
 
