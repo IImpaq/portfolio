@@ -10,7 +10,7 @@ const AboutHeroSection = () => {
     <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center text-center px-4">
       <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{duration: 0.8}}
       >
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">Hello, I'm Marcus</h1>
+        <h1 className="text-5xl md:text-7xl font-bold mb-6">Hello, I&apos;m Marcus</h1>
 
         <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
           A passionate software developer specializing in computer graphics, game engine development, and full-stack
