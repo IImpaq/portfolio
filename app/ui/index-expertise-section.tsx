@@ -11,7 +11,7 @@ const IndexExpertiseSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {placeholder.expertiseAreas.map((area, index) => (
           <motion.div key={area.title}
-                      className="border border-gray-800 p-6 rounded-lg text-center"
+                      className="bg-black border border-gray-800 p-6 rounded-lg text-center cursor-pointer"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
