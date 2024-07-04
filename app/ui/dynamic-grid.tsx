@@ -13,7 +13,6 @@ const DynamicGrid: React.FC<DynamicGridProps> = ({ cellSize, lineColor }) => {
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
-      console.log("Mouse moved:", event.clientX, event.clientY); // Debug log
     };
 
     window.addEventListener("mousemove", handleMouseMove);
