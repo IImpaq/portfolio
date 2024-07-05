@@ -1,5 +1,3 @@
-const {FiCode, FiLayers, FiGlobe, FiBook, FiPenTool, FiTool, FiThermometer, FiCompass, FiCpu, FiBriefcase, FiAward} = require("react-icons/fi");
-
 const skills = [
     "C++", "Vulkan", "JavaScript", "TypeScript", "React", "NextJS",
     "Python", "Swift", "Java", "GraphQL", "UE5", "Unity"
@@ -19,37 +17,37 @@ const projects = [
 
 const timeline = [
     {
-        icon: FiAward,
+        iconName: "FiAward",
         title: "Master's in Computer Science",
         organization: "Graz University of Technology",
         period: "TBD"
     },
     {
-        icon: FiCpu,
+        iconName: "FiCpu",
         title: "University tutor in object oriented programming",
         organization: "Graz University of Technology",
         period: "2024 - Now"
     },
     {
-        icon: FiBriefcase,
+        iconName: "FiBriefcase",
         title: "University tutor in project management",
         organization: "Graz University of Technology",
         period: "2023 - Now"
     },
     {
-        icon: FiBook,
+        iconName: "FiBook",
         title: "Bachelor's in Software Engineering",
         organization: "Graz University of Technology",
         period: "2021 - Now"
     },
     {
-        icon: FiThermometer,
+        iconName: "FiThermometer",
         title: "Paramedic",
         organization: "Austrian Red Cross",
         period: "2020 - 2021"
     },
     {
-        icon: FiPenTool,
+        iconName: "FiPenTool",
         title: "Business education in Vienna",
         organization: "Business Academy Donaustadt",
         period: "2015 - 2020"

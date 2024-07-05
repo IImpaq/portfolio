@@ -4,10 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import {IconType} from "react-icons";
 import * as Fi from 'react-icons/fi';
+import { getIcon } from "@/app/lib/icon-converter"
 
 interface ExpertiseCardProps {
   index: number,
-  key: string,
   area: {
     title: string,
     description: string;
@@ -15,11 +15,7 @@ interface ExpertiseCardProps {
   }
 }
 
-const ExpertiseCard: React.FC<ExpertiseCardProps> = ({index, key, area}) => {
-  const getIcon = (iconName: string): IconType => {
-    return (Fi as any)[iconName] || Fi.FiInfo;
-  };
-
+const ExpertiseCard: React.FC<ExpertiseCardProps> = ({index, area}) => {
   const Icon = getIcon(area.iconName);
 
   return <motion.div

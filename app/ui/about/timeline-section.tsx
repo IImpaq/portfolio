@@ -1,5 +1,3 @@
-"use client";
-
 import TimelineItem from "@/app/ui/about/timeline-item";
 import placeholder from "@/app/lib/placeholder-data"
 

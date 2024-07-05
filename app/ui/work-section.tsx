@@ -1,5 +1,5 @@
 import WorkCard from "@/app/ui/work-card";
-import CtaButton from "@/app/ui/cta-button";
+import PrimaryButton from "@/app/ui/common/primary-button";
 
 const WorkSection = () => {
   const projects = [
@@ -16,7 +16,7 @@ const WorkSection = () => {
               <WorkCard key={project.title} index={index} project={project}/>
           ))}
         </div>
-        <CtaButton href="/projects" text="View more projects"/>
+        <PrimaryButton href="/projects" text="View more projects"/>
       </section>
   );
 };

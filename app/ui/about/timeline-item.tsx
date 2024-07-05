@@ -1,8 +1,20 @@
-import {useEffect, useState} from "react";
-import {motion} from "framer-motion";
+"use client";
 
-// @ts-ignore
-const TimelineItem = ({item, index}) => {
+import React, {useEffect, useState} from "react";
+import {motion} from "framer-motion";
+import {getIcon} from "@/app/lib/icon-converter";
+
+interface TimelineItemProps {
+  index: number,
+  item: {
+    iconName: string;
+    title: string,
+    organization: string,
+    period: string,
+  }
+}
+
+const TimelineItem: React.FC<TimelineItemProps> = ({item, index}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -10,13 +22,15 @@ const TimelineItem = ({item, index}) => {
     return () => clearTimeout(timer);
   }, [index]);
 
+  const Icon = getIcon(item.iconName);
+
   return (
     <motion.div className="flex items-start mb-8"
                 initial={{opacity: 0, x: -20}}
                 animate={{opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20}}
                 transition={{duration: 0.5}}>
       <div className="border border-gray-800 p-3 rounded-full mr-4">
-        <item.icon className="text-2xl"/>
+        <Icon className="text-2xl"/>
       </div>
 
       <div>

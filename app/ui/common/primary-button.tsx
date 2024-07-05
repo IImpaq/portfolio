@@ -3,12 +3,12 @@
 import {motion} from "framer-motion";
 import Link from "next/link";
 
-interface CtaButtonProps {
+interface PrimaryButtonProps {
   href: string,
   text: string
 }
 
-const CtaButton: React.FC<CtaButtonProps> = ({ href, text }) => {
+const PrimaryButton: React.FC<PrimaryButtonProps> = ({ href, text }) => {
   return <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}}
                      transition={{duration: 0.8, delay: 0.6}}>
     <Link href={href}
@@ -18,4 +18,4 @@ const CtaButton: React.FC<CtaButtonProps> = ({ href, text }) => {
   </motion.div>;
 }
 
-export default CtaButton;
+export default PrimaryButton;
