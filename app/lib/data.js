@@ -11,3 +11,16 @@ export const fetchTimelineData = async (supabase) => {
         return data;
     }
 };
+
+export const fetchSkillsData = async (supabase) => {
+    const { data, error } = await supabase
+        .from('skills')
+        .select('*');
+
+    if (error) {
+        console.error('Error fetching timeline data:', error);
+        return null;
+    } else if (data) {
+        return data;
+    }
+};
