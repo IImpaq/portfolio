@@ -4,7 +4,7 @@ import { useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import {FiMail, FiGithub, FiLinkedin, FiSend, FiMapPin} from 'react-icons/fi';
+import {FiMail, FiGithub, FiLinkedin, FiSend, FiMapPin, FiActivity} from 'react-icons/fi';
 import Navbar from '@/app/ui/common/navbar';
 import Footer from "@/app/ui/common/footer";
 import ContactItem from "@/app/ui/contact/contact-item";
@@ -120,6 +120,12 @@ const Contact: NextPage = () => {
 
               <h2 className="text-2xl font-semibold mb-6">Details</h2>
               <div className="space-y-4">
+                <ContactItem
+                    icon={<FiActivity/>}
+                    title="Author / Media Owner"
+                    value="Marcus Gugacs"
+                    link="https://www.gugacs.me"
+                />
                 <ContactItem
                     icon={<FiMapPin/>}
                     title="Location"
