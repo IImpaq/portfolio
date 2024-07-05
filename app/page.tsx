@@ -1,13 +1,14 @@
 
 import Head from "next/head";
-import Navbar from "@/app/ui/navbar";
-import Footer from "@/app/ui/footer";
-import DynamicGrid from "@/app/ui/dynamic-grid";
+import Navbar from "@/app/ui/common/navbar";
+import Footer from "@/app/ui/common/footer";
+import DynamicGrid from "@/app/ui/common/dynamic-grid";
 import IndexHeroSection from "@/app/ui/index-hero-section";
 import IndexExpertiseSection from "@/app/ui/index-expertise-section";
 import ProjectsSection from "@/app/ui/projects-section";
 import CtaSection from "@/app/ui/cta-section";
 import IndexTimelineSection from "@/app/ui/index-timeline";
+import IndexWorkSection from "@/app/ui/index-work-section";
 
 const Home = () => {
   return (
@@ -26,8 +27,8 @@ const Home = () => {
         <div className="relative z-10 container mx-auto px-4">
           <IndexHeroSection/>
           <IndexExpertiseSection/>
-          <IndexTimelineSection />
-          <ProjectsSection/>
+          <IndexWorkSection/>
+          <IndexTimelineSection/>
           <CtaSection/>
         </div>
       </main>

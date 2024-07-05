@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Navbar from "@/app/ui/navbar";
+import Navbar from "@/app/ui/common/navbar";
 import HeroSection from "@/app/ui/about/hero-section";
 import SkillsSection from "@/app/ui/about/skill-section";
 import TimelineSection from "@/app/ui/timeline-section";
 import ExpertiseSection from "@/app/ui/about/expertise-section";
-import Footer from "@/app/ui/footer";
-import DynamicGrid from "@/app/ui/dynamic-grid";
+import Footer from "@/app/ui/common/footer";
+import DynamicGrid from "@/app/ui/common/dynamic-grid";
 
 const About = () => {
   return (

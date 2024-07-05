@@ -3,9 +3,9 @@
 import type {NextPage} from "next";
 import Head from "next/head";
 import {motion} from "framer-motion";
-import Navbar from "@/app/ui/navbar";
-import Footer from "@/app/ui/footer";
-import DynamicGrid from "@/app/ui/dynamic-grid";
+import Navbar from "@/app/ui/common/navbar";
+import Footer from "@/app/ui/common/footer";
+import DynamicGrid from "@/app/ui/common/dynamic-grid";
 import ProjectCard from "@/app/ui/projects/project-card";
 
 const Projects: NextPage = () => {

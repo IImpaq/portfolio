@@ -5,9 +5,9 @@ import Image from "next/image";
 import {usePathname} from "next/navigation";
 import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import Navbar from "@/app/ui/navbar";
-import Footer from "@/app/ui/footer";
-import DynamicGrid from "@/app/ui/dynamic-grid";
+import Navbar from "@/app/ui/common/navbar";
+import Footer from "@/app/ui/common/footer";
+import DynamicGrid from "@/app/ui/common/dynamic-grid";
 
 const projectsData = {
   "advanced-game-engine": {

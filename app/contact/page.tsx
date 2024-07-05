@@ -5,10 +5,10 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import {FiMail, FiGithub, FiLinkedin, FiSend, FiMapPin} from 'react-icons/fi';
-import Navbar from '@/app/ui/navbar';
-import Footer from "@/app/ui/footer";
+import Navbar from '@/app/ui/common/navbar';
+import Footer from "@/app/ui/common/footer";
 import ContactItem from "@/app/ui/contact/contact-item";
-import DynamicGrid from "@/app/ui/dynamic-grid";
+import DynamicGrid from "@/app/ui/common/dynamic-grid";
 
 const Contact: NextPage = () => {
   const [name, setName] = useState('');
