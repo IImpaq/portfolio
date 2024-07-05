@@ -45,7 +45,9 @@ const Project: React.FC<ProjectProps> = async ({ params, searchParams }) => {
 
   if (!project) return <div>Project not found</div>;
 
-  const showcase = await fetchShowcaseData(supabase, project.id);
+  let showcase = await fetchShowcaseData(supabase, project.id);
+
+  if(!showcase) showcase = [];
 
   return (
       <div className="bg-black text-white min-h-screen">
