@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Navbar from "@/app/ui/common/navbar";
 import Footer from "@/app/ui/common/footer";
 import DynamicGrid from "@/app/ui/common/dynamic-grid";
