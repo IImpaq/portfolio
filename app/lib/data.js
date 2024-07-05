@@ -24,3 +24,17 @@ export const fetchSkillsData = async (supabase) => {
         return data;
     }
 };
+
+export const fetchExpertiseData = async (supabase) => {
+    const { data, error } = await supabase
+        .from('expertises')
+        .select('*')
+        .order('id', {ascending: true});
+
+    if (error) {
+        console.error('Error fetching timeline data:', error);
+        return null;
+    } else if (data) {
+        return data;
+    }
+};

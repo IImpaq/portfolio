@@ -9,6 +9,7 @@ import { getIcon } from "@/app/lib/icon-converter"
 interface ExpertiseCardProps {
   index: number,
   area: {
+    icon: string,
     title: string,
     description: string;
     iconName: string;
@@ -16,7 +17,7 @@ interface ExpertiseCardProps {
 }
 
 const ExpertiseCard: React.FC<ExpertiseCardProps> = ({index, area}) => {
-  const Icon = getIcon(area.iconName);
+  const Icon = getIcon(area.icon);
 
   return <motion.div
       className="bg-black border border-gray-800 p-6 rounded-lg text-center cursor-pointer"
