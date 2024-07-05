@@ -2,7 +2,7 @@ import TimelineItem from "@/app/ui/about/timeline-item";
 import {createClient} from "@/app/lib/supabase/server";
 import {fetchTimelineData} from "@/app/lib/data";
 
-async function TimelineSection() {
+const TimelineSection = async () => {
   const supabase = createClient();
   const data = await fetchTimelineData(supabase);
 
