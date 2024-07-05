@@ -19,12 +19,26 @@ interface ExpertiseCardProps {
 const ExpertiseCard: React.FC<ExpertiseCardProps> = ({index, area}) => {
   const Icon = getIcon(area.icon);
 
+  const variants = {
+    initial: { opacity: 0, y: 20 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, delay: index * 0.1 }
+    },
+    hover: {
+      scale: 1.03,
+      borderColor: "rgb(255, 255, 255)",
+      transition: { duration: 0.3, delay: 0 }
+    }
+  };
+
   return <motion.div
       className="bg-black border border-gray-800 p-6 rounded-lg text-center cursor-pointer"
-      initial={{opacity: 0, y: 20}}
-      animate={{opacity: 1, y: 0}}
-      transition={{duration: 0.5, delay: index * 0.1}}
-      whileHover={{borderColor: "white", scale: 1.03}}>
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      whileHover="hover">
     <Icon className="text-4xl mb-4 mx-auto"/>
     <h3 className="text-xl font-semibold mb-2">{area.title}</h3>
     <p className="text-gray-400">{area.description}</p>

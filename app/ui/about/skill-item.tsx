@@ -8,12 +8,25 @@ interface SkillItemProps {
 }
 
 const SkillItem: React.FC<SkillItemProps> = ({ index, text }) => {
+  const variants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: { delay: index * 0.1 }
+    },
+    hover: {
+      scale: 1.1,
+      borderColor: "rgb(255, 255, 255)",
+      transition: { duration: 0.2, delay: 0 }
+    }
+  };
+
   return <motion.div
       className="border border-gray-800 px-4 py-2 rounded-full cursor-pointer"
-      initial={{opacity: 0, scale: 0.5}}
-      animate={{opacity: 1, scale: 1}}
-      transition={{duration: 0.5, delay: index * 0.1}}
-      whileHover={{scale: 1.1, borderColor: "white"}}>
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      whileHover="hover">
     {text}
   </motion.div>;
 }
