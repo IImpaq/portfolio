@@ -17,37 +17,37 @@ const projects = [
 
 const timeline = [
     {
-        iconName: "FiAward",
+        icon: "FiAward",
         title: "Master's in Computer Science",
         organization: "Graz University of Technology",
         period: "TBD"
     },
     {
-        iconName: "FiCpu",
+        icon: "FiCpu",
         title: "University tutor in object oriented programming",
         organization: "Graz University of Technology",
         period: "2024 - Now"
     },
     {
-        iconName: "FiBriefcase",
+        icon: "FiBriefcase",
         title: "University tutor in project management",
         organization: "Graz University of Technology",
         period: "2023 - Now"
     },
     {
-        iconName: "FiBook",
+        icon: "FiBook",
         title: "Bachelor's in Software Engineering",
         organization: "Graz University of Technology",
         period: "2021 - Now"
     },
     {
-        iconName: "FiThermometer",
+        icon: "FiThermometer",
         title: "Paramedic",
         organization: "Austrian Red Cross",
         period: "2020 - 2021"
     },
     {
-        iconName: "FiPenTool",
+        icon: "FiPenTool",
         title: "Business education in Vienna",
         organization: "Business Academy Donaustadt",
         period: "2015 - 2020"
