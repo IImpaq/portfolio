@@ -4,7 +4,7 @@ import {motion} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const WorkShowcase = () => {
+const WorkSection = () => {
   const projects = [
     {title: "Project1", image: "/full-stack-application.jpg", tech: "C++, OpenGL"},
     {title: "Project2", image: "/game-engine-thumbnail.jpg", tech: "TypeScript, React"},
@@ -49,4 +49,4 @@ const WorkShowcase = () => {
   );
 };
 
-export default WorkShowcase;
+export default WorkSection;

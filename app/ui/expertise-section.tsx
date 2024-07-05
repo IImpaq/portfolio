@@ -3,7 +3,7 @@
 import {motion} from "framer-motion";
 import placeholder from "@/app/lib/placeholder-data"
 
-const IndexExpertiseSection = () => {
+const ExpertiseSection = () => {
   return (
     <section className="py-20">
       <h2 className="text-3xl font-bold mb-12 text-center">Areas of Expertise</h2>
@@ -26,4 +26,4 @@ const IndexExpertiseSection = () => {
   );
 };
 
-export default IndexExpertiseSection;
+export default ExpertiseSection;
