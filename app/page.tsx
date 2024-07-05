@@ -3,7 +3,7 @@ import Navbar from "@/app/ui/common/navbar";
 import Footer from "@/app/ui/common/footer";
 import DynamicGrid from "@/app/ui/common/dynamic-grid";
 import HeroSection from "@/app/ui/hero-section";
-import ExpertiseSection from "@/app/ui/expertise-section";
+import ExpertiseSection from "@/app/ui/common/expertise-section";
 import CtaSection from "@/app/ui/cta-section";
 import TimelineSection from "@/app/ui/timeline-section";
 import WorkSection from "@/app/ui/work-section";

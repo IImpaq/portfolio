@@ -6,9 +6,9 @@ const skills = [
 ];
 
 const expertiseAreas = [
-    {icon: FiCode, title: "Computer Graphics", description: "Crafting immersive visual experiences"},
-    {icon: FiLayers, title: "Game Engine Development", description: "Building the foundations of interactive worlds"},
-    {icon: FiGlobe, title: "Full-Stack Development", description: "Creating end-to-end web and mobile solutions"},
+    {iconName: "FiCode", title: "Computer Graphics", description: "Crafting immersive visual experiences"},
+    {iconName: "FiLayers", title: "Game Engine Development", description: "Building the foundations of interactive worlds"},
+    {iconName: "FiGlobe", title: "Full-Stack Development", description: "Creating end-to-end web and mobile solutions"},
 ];
 
 const projects = [
