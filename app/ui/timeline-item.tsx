@@ -7,7 +7,7 @@ interface TimelineItemProps {
   key: string,
   index: number,
   event: {
-    iconName: string;
+    icon: string;
     title: string;
     organization: string;
     period: string;

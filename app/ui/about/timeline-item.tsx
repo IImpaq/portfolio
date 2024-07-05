@@ -7,7 +7,7 @@ import {getIcon} from "@/app/lib/icon-converter";
 interface TimelineItemProps {
   index: number,
   item: {
-    iconName: string;
+    icon: string;
     title: string,
     organization: string,
     period: string,
@@ -22,7 +22,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({item, index}) => {
     return () => clearTimeout(timer);
   }, [index]);
 
-  const Icon = getIcon(item.iconName);
+  const Icon = getIcon(item.icon);
 
   return (
     <motion.div className="flex items-start mb-8"
