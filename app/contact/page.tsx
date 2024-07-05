@@ -17,12 +17,10 @@ const Contact: NextPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement form submission logic here
-    console.log('Form submitted:', { name, email, message });
-    // Reset form fields
     setName('');
     setEmail('');
     setMessage('');
+    alert("The contact form does not work yet, please send an email to me directly.");
   };
 
   return (
@@ -85,7 +83,7 @@ const Contact: NextPage = () => {
                 <motion.button
                     type="button"
                     className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition duration-300 flex items-center justify-center"
-                    onClick={() => alert("The contact form does not work yet, please send an email to me directly.")}
+                    onClick={handleSubmit}
                 >
                   Send Message <FiSend className="ml-2"/>
                 </motion.button>
