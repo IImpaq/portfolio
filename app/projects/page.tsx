@@ -5,8 +5,16 @@ import Footer from "@/app/ui/common/footer";
 import DynamicGrid from "@/app/ui/common/dynamic-grid";
 import ProjectCard from "@/app/ui/projects/project-card";
 import ProjectTitle from "@/app/ui/projects/project-title";
+import {createClient} from "@/app/lib/supabase/server";
+import {fetchProjectsData} from "@/app/lib/data";
+import React from "react";
 
-const Projects: NextPage = () => {
+const Projects: NextPage = async () => {
+  const supabase = createClient();
+  const projects = await fetchProjectsData(supabase);
+
+  if (!projects) return <div>Project not found</div>;
+
   return (
       <div className="bg-black text-white min-h-screen">
         <Head>
@@ -24,37 +32,16 @@ const Projects: NextPage = () => {
             <ProjectTitle text="Projects"/>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <ProjectCard
-                  title="Advanced Game Engine"
-                  description="A high-performance game engine built with C++ and Vulkan, featuring real-time rendering"
-                  image="/game-engine-thumbnail.jpg"
-                  technologies={["C++", "OpenGL", "GLSL", "ImGui"]}
-                  slug="advanced-game-engine"
-              />
-
-              <ProjectCard
-                  title="Portfolio"
-                  description="A modern web app using TypeScript, NextJS, showcasing responsive design and real-time data updates."
-                  image="/full-stack-application.jpg"
-                  technologies={["TypeScript", "Next.js", "Tailwind CSS"]}
-                  slug="full-stack-web-application"
-              />
-
-              <ProjectCard
-                  title="Advanced Game Engine 2"
-                  description="A high-performance game engine built with C++ and Vulkan, featuring real-time rendering"
-                  image="/full-stack-application.jpg"
-                  technologies={["C++", "OpenGL", "GLSL", "ImGui"]}
-                  slug="advanced-game-engine"
-              />
-
-              <ProjectCard
-                  title="Portfolio 2"
-                  description="A modern web app using TypeScript, NextJS, showcasing responsive design and real-time data updates."
-                  image="/game-engine-thumbnail.jpg"
-                  technologies={["TypeScript", "Next.js", "Tailwind CSS"]}
-                  slug="full-stack-web-application"
-              />
+              {projects.map((project: any, index: number) => (
+                  <ProjectCard
+                      key={index}
+                      title={project.title}
+                      description={project.overview}
+                      image={project.image}
+                      technologies={project.technologies}
+                      slug={project.slug}
+                  />
+              ))}
             </div>
           </div>
         </main>

@@ -3,16 +3,14 @@ import Navbar from "@/app/ui/common/navbar";
 import Footer from "@/app/ui/common/footer";
 import DynamicGrid from "@/app/ui/common/dynamic-grid";
 import ProjectDetails from "@/app/ui/projects/project-details";
-import { headers } from 'next/headers';
-
-function getPathname() {
-  return new URL(headers().get('referer') || '').pathname;
-}
+import React from "react";
+import {createClient} from "@/app/lib/supabase/server";
+import {fetchProjectData, fetchShowcaseData} from "@/app/lib/data";
 
 const projectsData = {
   "advanced-game-engine": {
     title: "Advanced Game Engine",
-    fullDescription: "A cutting-edge game engine built from the ground up, featuring state-of-the-art graphics capabilities, robust physics simulation, and an intuitive asset management system. This engine pushes the boundaries of real-time rendering and provides developers with powerful tools to create immersive gaming experiences.",
+    description: "A cutting-edge game engine built from the ground up, featuring state-of-the-art graphics capabilities, robust physics simulation, and an intuitive asset management system. This engine pushes the boundaries of real-time rendering and provides developers with powerful tools to create immersive gaming experiences.",
     image: "/game-engine-thumbnail.jpg",
     technologies: ["C++", "Vulkan", "GLSL", "ImGui"],
     githubLink: "https://github.com/IImpaq/portfolio",
@@ -34,31 +32,38 @@ const projectsData = {
   },
 };
 
-const Project = () => {
-  const router = getPathname();
-  const slug = router.split("/")[2];
-  // @ts-ignore
-  const project = projectsData[slug];
+interface ProjectProps {
+  params: { slug: string },
+  searchParams: { page: string }
+}
+
+const Project: React.FC<ProjectProps> = async ({ params, searchParams }) => {
+  const { slug } = params;
+
+  const supabase = createClient();
+  const project = await fetchProjectData(supabase, slug);
 
   if (!project) return <div>Project not found</div>;
 
+  const showcase = await fetchShowcaseData(supabase, project.id);
+
   return (
-    <div className="bg-black text-white min-h-screen">
-      <Head>
-        <title>{project.title} - Your Name</title>
-        <meta name="description" content={`Detailed information about ${project.title} by [Your Name].`}/>
-      </Head>
+      <div className="bg-black text-white min-h-screen">
+        <Head>
+          <title>{project.title} - Your Name</title>
+          <meta name="description" content={`Detailed information about ${project.title} by [Your Name].`}/>
+        </Head>
 
-      <Navbar/>
+        <Navbar/>
 
-      <main className="relative pt-16">
-        <DynamicGrid cellSize={50} lineColor="rgba(255,255,255,0.1)"/>
+        <main className="relative pt-16">
+          <DynamicGrid cellSize={50} lineColor="rgba(255,255,255,0.1)"/>
 
-        <ProjectDetails project={project}/>
-      </main>
+          <ProjectDetails project={project} showcase={showcase}/>
+        </main>
 
-      <Footer/>
-    </div>
+        <Footer/>
+      </div>
   );
 };
 

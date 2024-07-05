@@ -6,9 +6,10 @@ import {FiExternalLink, FiGithub} from "react-icons/fi";
 
 interface ProjectDetailsProps {
   project: any,
+  showcase: any
 }
 
-const ProjectDetails: React.FC<ProjectDetailsProps> = ({project}) => {
+const ProjectDetails: React.FC<ProjectDetailsProps> = ({project, showcase}) => {
   return <div className="relative z-10 container mx-auto px-4 max-w-screen-xl py-20">
     <motion.h1
         className="text-4xl md:text-5xl font-bold mb-6 text-center"
@@ -26,7 +27,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({project}) => {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
       <div className="md:col-span-2">
         <h2 className="text-2xl font-semibold mb-4">Overview</h2>
-        <p className="text-gray-300 mb-8">{project.fullDescription}</p>
+        <p className="text-gray-300 mb-8">{project.description}</p>
 
         <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
         <ul className="list-disc list-inside text-gray-300 mb-8">
@@ -42,7 +43,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({project}) => {
 
         <h2 className="text-2xl font-semibold mb-4">Showcase</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {project.showcase.map((item: { type: string, alt: string, src: string }, index: number) => (
+          {showcase.map((item: { type: string, alt: string, src: string }, index: number) => (
               <div key={index} className="rounded-lg overflow-hidden">
                 {item.type === "image" ? (
                     <Image src={item.src} alt={item.alt} width={600} height={400} objectFit="cover"/>
@@ -65,16 +66,16 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({project}) => {
         </div>
 
         <h2 className="text-2xl font-semibold mb-4">Links</h2>
-        {project.githubLink && (
-            <a href={project.githubLink}
+        {project.github_link && (
+            <a href={project.github_link}
                target="_blank"
                rel="noopener noreferrer"
                className="flex items-center text-white hover:underline mb-2">
               <FiGithub className="mr-2"/> View on GitHub
             </a>
         )}
-        {project.liveLink && (
-            <a href={project.liveLink}
+        {project.production_link && (
+            <a href={project.production_link}
                target="_blank"
                rel="noopener noreferrer"
                className="flex items-center text-white hover:underline">
