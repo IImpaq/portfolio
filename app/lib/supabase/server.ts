@@ -1,5 +1,6 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
+import {createFetch} from "@/app/lib/cache";
 
 export function createClient() {
   const cookieStore = cookies()
@@ -8,6 +9,14 @@ export function createClient() {
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
       {
+        global: {
+          fetch: createFetch({
+            // cache: "no-store"
+            next: {
+              revalidate: 60*60,
+            }
+          })
+        },
         cookies: {
           getAll() {
             return cookieStore.getAll()
