@@ -1,31 +1,37 @@
-import {useEffect, useState} from "react";
+"use client";
+
 import {motion} from "framer-motion";
+import React from "react";
 
-// @ts-ignore
-const TimelineItem = ({item, index}) => {
-  const [isVisible, setIsVisible] = useState(false);
+interface TimelineItemProps {
+  key: string,
+  index: number,
+  event: {
+    icon: string;
+    title: string;
+    organization: string;
+    period: string;
+  }
+}
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), index * 200);
-    return () => clearTimeout(timer);
-  }, [index]);
+const TimelineItem: React.FC<TimelineItemProps> = ({ key, index, event }) => {
+  return <motion.div
 
-  return (
-    <motion.div className="flex items-start mb-8"
-                initial={{opacity: 0, x: -20}}
-                animate={{opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20}}
-                transition={{duration: 0.5}}>
-      <div className="border border-gray-800 p-3 rounded-full mr-4">
-        <item.icon className="text-2xl"/>
-      </div>
-
-      <div>
-        <h3 className="text-xl font-semibold">{item.title}</h3>
-        <p className="text-gray-400">{item.organization}</p>
-        <p className="text-gray-500">{item.period}</p>
-      </div>
-    </motion.div>
-  );
-};
+      className="relative flex items-center"
+      initial={{opacity: 0, y: 20}}
+      animate={{opacity: 1, y: 0}}
+      transition={{duration: 0.5, delay: index * 0.1}}
+  >
+    <div className="flex-1 pr-8 text-right">
+      <span className="text-xl font-bold">{event.period}</span>
+    </div>
+    <div
+        className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full border-4 border-black z-10"></div>
+    <div className="flex-1 text-left pl-8">
+      <h3 className="text-xl font-semibold mb-1">{event.title}</h3>
+      <p className="text-gray-400">{event.organization}</p>
+    </div>
+  </motion.div>;
+}
 
 export default TimelineItem;

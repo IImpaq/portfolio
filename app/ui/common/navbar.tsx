@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
-import NavLink from "@/app/ui/navlink";
+import NavLink from "@/app/ui/common/navlink";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -4,11 +4,11 @@ import { useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import {FiMail, FiGithub, FiLinkedin, FiSend, FiMapPin} from 'react-icons/fi';
-import Navbar from '@/app/ui/navbar';
-import ContactItem from "@/app/ui/contact-item";
-import DynamicGrid from "@/app/ui/dynamic-grid";
-import Footer from "@/app/ui/footer";
+import {FiMail, FiGithub, FiLinkedin, FiSend, FiMapPin, FiActivity} from 'react-icons/fi';
+import Navbar from '@/app/ui/common/navbar';
+import Footer from "@/app/ui/common/footer";
+import ContactItem from "@/app/ui/contact/contact-item";
+import DynamicGrid from "@/app/ui/common/dynamic-grid";
 
 const Contact: NextPage = () => {
   const [name, setName] = useState('');
@@ -17,12 +17,10 @@ const Contact: NextPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement form submission logic here
-    console.log('Form submitted:', { name, email, message });
-    // Reset form fields
     setName('');
     setEmail('');
     setMessage('');
+    alert("The contact form does not work yet, please send an email to me directly.");
   };
 
   return (
@@ -85,7 +83,7 @@ const Contact: NextPage = () => {
                 <motion.button
                     type="button"
                     className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition duration-300 flex items-center justify-center"
-                    onClick={() => alert("The contact form does not work yet, please send an email to me directly.")}
+                    onClick={handleSubmit}
                 >
                   Send Message <FiSend className="ml-2"/>
                 </motion.button>
@@ -122,6 +120,12 @@ const Contact: NextPage = () => {
 
               <h2 className="text-2xl font-semibold mb-6">Details</h2>
               <div className="space-y-4">
+                <ContactItem
+                    icon={<FiActivity/>}
+                    title="Author / Media Owner"
+                    value="Marcus Gugacs"
+                    link="https://www.gugacs.me"
+                />
                 <ContactItem
                     icon={<FiMapPin/>}
                     title="Location"

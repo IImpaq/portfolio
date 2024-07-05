@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Navbar from "@/app/ui/navbar";
-import AboutHeroSection from "@/app/ui/about-hero-section";
-import SkillsSection from "@/app/ui/skill-section";
-import TimelineSection from "@/app/ui/timeline-section";
-import AboutExpertiseSection from "@/app/ui/about-expertise";
-import Footer from "@/app/ui/footer";
-import DynamicGrid from "@/app/ui/dynamic-grid";
+import Navbar from "@/app/ui/common/navbar";
+import HeroSection from "@/app/ui/about/hero-section";
+import SkillsSection from "@/app/ui/about/skill-section";
+import TimelineSection from "@/app/ui/about/timeline-section";
+import ExpertiseSection from "@/app/ui/common/expertise-section";
+import Footer from "@/app/ui/common/footer";
+import DynamicGrid from "@/app/ui/common/dynamic-grid";
 
 const About = () => {
   return (
@@ -22,8 +22,8 @@ const About = () => {
         <DynamicGrid cellSize={50} lineColor="rgba(255,255,255,0.1)" />
 
         <div className="relative z-10">
-          <AboutHeroSection/>
-          <AboutExpertiseSection/>
+          <HeroSection/>
+          <ExpertiseSection/>
           <SkillsSection/>
           <TimelineSection/>
         </div>

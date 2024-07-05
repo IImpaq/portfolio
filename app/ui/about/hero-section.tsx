@@ -3,7 +3,7 @@
 import useSmoothScroll from "@/app/lib/hooks/smooth-scroll";
 import {motion} from "framer-motion";
 
-const AboutHeroSection = () => {
+const HeroSection = () => {
   const scrollTo = useSmoothScroll();
 
   return (
@@ -28,4 +28,4 @@ const AboutHeroSection = () => {
   );
 };
 
-export default AboutHeroSection;
+export default HeroSection;
