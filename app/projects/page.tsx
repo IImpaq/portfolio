@@ -13,7 +13,7 @@ const Projects: NextPage = async () => {
   const supabase = createClient();
   const projects = await fetchProjectsData(supabase);
 
-  if (!projects) return <div>Project not found</div>;
+  if (!projects) return <div>Projects not found</div>;
 
   return (
       <div className="bg-black text-white min-h-screen">
