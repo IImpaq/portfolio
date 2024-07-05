@@ -1,9 +1,9 @@
 "use client";
 
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import placeholder from "@/app/lib/placeholder-data"
 
-const AboutExpertiseSection = () => {
+const ExpertiseSection = () => {
   return (
     <section id="expertise" className="py-20 px-4">
       <h2 className="text-3xl font-bold mb-12 text-center">Areas of Expertise</h2>
@@ -25,4 +25,4 @@ const AboutExpertiseSection = () => {
   );
 };
 
-export default AboutExpertiseSection;
+export default ExpertiseSection;
