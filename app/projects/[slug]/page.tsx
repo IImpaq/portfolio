@@ -7,31 +7,6 @@ import React from "react";
 import {createClient} from "@/app/lib/supabase/server";
 import {fetchProjectData, fetchShowcaseData} from "@/app/lib/data";
 
-const projectsData = {
-  "advanced-game-engine": {
-    title: "Advanced Game Engine",
-    description: "A cutting-edge game engine built from the ground up, featuring state-of-the-art graphics capabilities, robust physics simulation, and an intuitive asset management system. This engine pushes the boundaries of real-time rendering and provides developers with powerful tools to create immersive gaming experiences.",
-    image: "/game-engine-thumbnail.jpg",
-    technologies: ["C++", "Vulkan", "GLSL", "ImGui"],
-    githubLink: "https://github.com/IImpaq/portfolio",
-    features: [
-      "Advanced rendering pipeline with PBR support",
-      "Real-time global illumination",
-      "Physics-based animation system",
-      "Intuitive scene editor with live preview",
-      "Cross-platform support (Windows, macOS, Linux)",
-    ],
-    showcase: [
-      { type: "video", src: "/test1.mp4", alt: "Engine demo video 1" },
-      { type: "video", src: "/test2.mp4", alt: "Engine demo video 2" },
-      { type: "video", src: "/test3.mp4", alt: "Engine demo video 3" },
-      { type: "video", src: "/test4.mp4", alt: "Engine demo video 4" },
-      { type: "image", src: "/images/game-engine-showcase-1.jpg", alt: "Rendering showcase" },
-      { type: "image", src: "/images/game-engine-showcase-2.jpg", alt: "Physics simulation" },
-    ],
-  },
-};
-
 interface ProjectProps {
   params: { slug: string },
   searchParams: { page: string }
