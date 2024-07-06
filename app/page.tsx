@@ -7,8 +7,13 @@ import ExpertiseSection from "@/app/ui/common/expertise-section";
 import CtaSection from "@/app/ui/cta-section";
 import TimelineSection from "@/app/ui/timeline-section";
 import WorkSection from "@/app/ui/work-section";
+import {fetchPublicContentURL} from "@/app/lib/data";
+import {createClient} from "@/app/lib/supabase/server";
 
-const Home = () => {
+const Home = async () => {
+  const supabase = createClient();
+  const portraitUrl = await fetchPublicContentURL(supabase, "static/portrait.jpg")
+
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
       <Head>
@@ -23,7 +28,7 @@ const Home = () => {
         <DynamicGrid cellSize={50} lineColor="rgba(255,255,255,0.1)" />
 
         <div className="relative z-10 container mx-auto px-4">
-          <HeroSection/>
+          <HeroSection portraitUrl={portraitUrl}/>
           <ExpertiseSection/>
           <WorkSection/>
           <TimelineSection/>
