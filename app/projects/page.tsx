@@ -1,4 +1,3 @@
-import type {NextPage} from "next";
 import Head from "next/head";
 import Navbar from "@/app/ui/common/navbar";
 import Footer from "@/app/ui/common/footer";
@@ -8,8 +7,9 @@ import {createClient} from "@/app/lib/supabase/server";
 import {fetchProjectsData, fetchPublicContentURL} from "@/app/lib/data";
 import React from "react";
 import LazyProjectCard from "@/app/ui/projects/lazy-project-card";
+import ProjectCard from "@/app/ui/projects/project-card";
 
-const Projects: NextPage = async () => {
+const Projects = async () => {
   const supabase = createClient();
   const projects = await fetchProjectsData(supabase);
 

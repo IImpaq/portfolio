@@ -19,8 +19,9 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ key, index, event }) => {
 
       className="relative flex items-center"
       initial={{opacity: 0, y: 20}}
-      animate={{opacity: 1, y: 0}}
       transition={{duration: 0.5, delay: index * 0.1}}
+      whileInView={{opacity: 1, y: 0}}
+      viewport={{ once: true, amount: 0.5 }}
   >
     <div className="flex-1 pr-8 text-right">
       <span className="text-xl font-bold">{event.period}</span>

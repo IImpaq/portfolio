@@ -25,8 +25,9 @@ const SkillItem: React.FC<SkillItemProps> = ({ index, text }) => {
       className="border border-gray-800 px-4 py-2 rounded-full cursor-pointer"
       variants={variants}
       initial="initial"
-      animate="animate"
-      whileHover="hover">
+      whileHover="hover"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.5 }}>
     {text}
   </motion.div>;
 }
