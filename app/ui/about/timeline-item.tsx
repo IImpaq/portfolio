@@ -27,7 +27,8 @@ const TimelineItem: React.FC<TimelineItemProps> = ({item, index}) => {
   return (
     <motion.div className="flex items-start mb-8"
                 initial={{opacity: 0, x: -20}}
-                animate={{opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20}}
+                whileInView={{opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20}}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{duration: 0.5}}>
       <div className="border border-gray-800 p-3 rounded-full mr-4">
         <Icon className="text-2xl"/>

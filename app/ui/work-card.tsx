@@ -4,24 +4,25 @@ import {motion} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-interface ProjectCardProps {
+export interface WorkCardProps {
   index: number,
   project: any
 }
 
-const WorkCard: React.FC<ProjectCardProps> = ({index, project}) => {
+const WorkCard: React.FC<WorkCardProps> = ({index, project}) => {
   return <motion.div
       className="group relative overflow-hidden rounded-lg border border-gray-800 cursor-pointer"
       initial={{opacity: 0, y: 20}}
-      animate={{opacity: 1, y: 0}}
+      whileInView={{opacity: 1, y: 0}}
       transition={{duration: 0.5, delay: index * 0.1}}
+      viewport={{ once: true, amount: 0.5 }}
   >
     <Image
         src={project.image}
         alt={project.title}
         width={400}
         height={300}
-        objectFit="cover"
+        style={{objectFit: "cover"}}
         className="transition-transform duration-300 group-hover:scale-105"
     />
     <Link href={"/projects/" + project.slug}

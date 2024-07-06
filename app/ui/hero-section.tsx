@@ -51,11 +51,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({portraitUrl}) => {
             <Image
                 src={portraitUrl}
                 alt="Portrait"
-                layout="fill"
-                objectFit="cover"
+                fill
+                sizes="auto"
                 className="transition-all duration-300 filter grayscale hover:filter-none"
+                style={{objectFit: "cover"}}
                 onLoad={() => setIsPortraitLoaded(true)}
                 priority
+                loading="eager"
             />
           </motion.div>
         </div>
