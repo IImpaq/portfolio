@@ -1,14 +1,18 @@
 import WorkCard from "@/app/ui/work-card";
 import PrimaryButton from "@/app/ui/common/primary-button";
 import {createClient} from "@/app/lib/supabase/server";
-import {fetchProjectsData} from "@/app/lib/data";
+import {fetchProjectsData, fetchPublicContentURL} from "@/app/lib/data";
 import React from "react";
 
 const WorkSection = async () => {
   const supabase = createClient();
-  const projects = await fetchProjectsData(supabase);
+  const projects = await fetchProjectsData(supabase, 3);
 
   if (!projects) return <div>Projects not found</div>;
+
+  for(let i = 0; i < projects.length; i++) {
+    projects[i].image = await fetchPublicContentURL(supabase, "projects/" + projects[i].image);
+  }
 
   return (
       <section className="flex py-20 flex-col items-center">

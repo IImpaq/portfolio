@@ -5,7 +5,7 @@ import DynamicGrid from "@/app/ui/common/dynamic-grid";
 import ProjectDetails from "@/app/ui/projects/project-details";
 import React from "react";
 import {createClient} from "@/app/lib/supabase/server";
-import {fetchProjectData, fetchShowcaseData} from "@/app/lib/data";
+import {fetchProjectData, fetchPublicContentURL, fetchShowcaseData} from "@/app/lib/data";
 
 interface ProjectProps {
   params: { slug: string },
@@ -19,6 +19,8 @@ const Project: React.FC<ProjectProps> = async ({ params, searchParams }) => {
   const project = await fetchProjectData(supabase, slug);
 
   if (!project) return <div>Project not found</div>;
+
+  project.image = await fetchPublicContentURL(supabase, "projects/" + project.image);
 
   let showcase = await fetchShowcaseData(supabase, project.id);
 
