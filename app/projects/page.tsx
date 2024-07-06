@@ -3,11 +3,11 @@ import Head from "next/head";
 import Navbar from "@/app/ui/common/navbar";
 import Footer from "@/app/ui/common/footer";
 import DynamicGrid from "@/app/ui/common/dynamic-grid";
-import ProjectCard from "@/app/ui/projects/project-card";
 import ProjectTitle from "@/app/ui/projects/project-title";
 import {createClient} from "@/app/lib/supabase/server";
 import {fetchProjectsData, fetchPublicContentURL} from "@/app/lib/data";
 import React from "react";
+import LazyProjectCard from "@/app/ui/projects/lazy-project-card";
 
 const Projects: NextPage = async () => {
   const supabase = createClient();
@@ -37,7 +37,7 @@ const Projects: NextPage = async () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {projects.map((project: any, index: number) => (
-                  <ProjectCard
+                  <LazyProjectCard
                       key={index}
                       title={project.title}
                       description={project.overview}

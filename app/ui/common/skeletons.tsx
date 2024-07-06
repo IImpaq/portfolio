@@ -3,7 +3,7 @@ import React from "react";
 const shimmer =
     'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent';
 
-function ProjectCardSkeleton() {
+export function ProjectCardSkeleton() {
   return (
       <div className={`bg-black border border-gray-800 rounded-lg overflow-hidden relative ${shimmer}`}>
         <div className="relative h-48 bg-gray-800"></div>

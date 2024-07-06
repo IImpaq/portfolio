@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {FiArrowRight} from "react-icons/fi";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
@@ -13,7 +13,8 @@ interface ProjectCardProps {
   slug: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, technologies, slug }) => (
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, technologies, slug }) => {
+  return (
     <motion.div className="bg-black border border-gray-800 rounded-lg overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -40,6 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, te
         </Link>
       </div>
     </motion.div>
-);
+)
+};
 
 export default ProjectCard;
