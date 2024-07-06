@@ -39,11 +39,12 @@ export const fetchExpertiseData = async (supabase) => {
     }
 };
 
-export const fetchProjectsData = async (supabase) => {
+export const fetchProjectsData = async (supabase, limit = -1) => {
     const { data, error } = await supabase
         .from('projects')
         .select('*')
-        .order('start_year', {ascending: true});
+        .order('start_year', {ascending: true})
+        .limit(limit === -1 ? null : limit);
 
     if (error) {
         console.error('Error fetching projects data:', error)
@@ -81,3 +82,7 @@ export const fetchShowcaseData = async (supabase, projectId) => {
         return data;
     }
 };
+
+export const fetchPublicContentURL = async (supabase, filename) => {
+    return supabase.storage.from("content").getPublicUrl(filename).data.publicUrl;
+}

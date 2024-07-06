@@ -4,8 +4,13 @@ import {motion} from "framer-motion";
 import Link from "next/link";
 import {FiChevronDown} from "react-icons/fi";
 import Image from "next/image";
+import React from "react";
 
-const HeroSection = () => (
+interface HeroSectionProps {
+  portraitUrl: string
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({portraitUrl}) => (
     <section
         className="min-h-[calc(100vh-4rem)] flex flex-col md:flex-row justify-center items-center text-center md:text-left relative">
       <div className="md:w-1/2">
@@ -40,7 +45,7 @@ const HeroSection = () => (
             style={{ borderRadius: '28% 72% 65% 35% / 34% 45% 55% 66%' }}
         >
           <Image
-              src="/images/portrait-title.jpg"
+              src={portraitUrl}
               alt="Portrait"
               layout="fill"
               objectFit="cover"

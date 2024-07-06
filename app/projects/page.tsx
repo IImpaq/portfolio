@@ -6,7 +6,7 @@ import DynamicGrid from "@/app/ui/common/dynamic-grid";
 import ProjectCard from "@/app/ui/projects/project-card";
 import ProjectTitle from "@/app/ui/projects/project-title";
 import {createClient} from "@/app/lib/supabase/server";
-import {fetchProjectsData} from "@/app/lib/data";
+import {fetchProjectsData, fetchPublicContentURL} from "@/app/lib/data";
 import React from "react";
 
 const Projects: NextPage = async () => {
@@ -14,6 +14,10 @@ const Projects: NextPage = async () => {
   const projects = await fetchProjectsData(supabase);
 
   if (!projects) return <div>Projects not found</div>;
+
+  for(let i = 0; i < projects.length; i++) {
+    projects[i].image = await fetchPublicContentURL(supabase, "projects/" + projects[i].image);
+  }
 
   return (
       <div className="bg-black text-white min-h-screen">
