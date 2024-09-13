@@ -45,6 +45,7 @@ const CookieNotice = () => {
           <button
             onClick={() => setIsVisible(false)}
             className="ml-4 text-white hover:text-gray-300 transition-colors"
+            aria-label="dismiss cookies"
           >
             <FiX size={24} />
           </button>
