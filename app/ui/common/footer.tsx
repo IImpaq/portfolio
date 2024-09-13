@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,17 +37,17 @@ const Footer = () => {
           </nav>
           <div className="md:w-1/4 flex justify-end">
             <div className="flex space-x-4">
-              <a href="https://github.com/IImpaq" target="_blank" rel="noopener noreferrer"
-                 className="text-gray-400 hover:text-white transition-colors duration-300">
-                <FiGithub size={20}/>
+              <a href="https://github.com/IImpaq" target="_blank" rel="noopener noreferrer" aria-label="personal gitHub page"
+                className="text-gray-400 hover:text-white transition-colors duration-300">
+                <FiGithub size={20} />
               </a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"
-                 className="text-gray-400 hover:text-white transition-colors duration-300">
-                <FiLinkedin size={20}/>
+              <a href="https://linkedin.com/in/gugacs" target="_blank" rel="noopener noreferrer" aria-label="personal linkedIn page"
+                className="text-gray-400 hover:text-white transition-colors duration-300">
+                <FiLinkedin size={20} />
               </a>
-              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"
-                 className="text-gray-400 hover:text-white transition-colors duration-300">
-                <FiTwitter size={20}/>
+              <a href="https://instagram.com/mgugacs" target="_blank" rel="noopener noreferrer" aria-label="personal instagram page"
+                className="text-gray-400 hover:text-white transition-colors duration-300">
+                <FiInstagram size={20} />
               </a>
             </div>
           </div>
