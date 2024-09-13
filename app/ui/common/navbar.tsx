@@ -22,15 +22,15 @@ const Navbar = () => {
         </div>
 
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <FiX className="text-2xl"/> : <FiMenu className="text-2xl"/>}
+          <button onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "close mobile navigation menu" : "open mobile navigation menu"}>
+            {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
           </button>
         </div>
       </div>
 
       {isOpen && (
-        <motion.div initial={{opacity: 0, y: -20}} animate={{opacity: 1, y: 0}}
-                    exit={{opacity: 0, y: -20}} className="md:hidden bg-gray-900 py-4">
+        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }} className="md:hidden bg-gray-900 py-4">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             <NavLink href="/" onClick={() => setIsOpen(false)} text="Home" />
             <NavLink href="/projects" onClick={() => setIsOpen(false)} text="Projects" />
