@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme variables */
+  --color-bg-light: #fbf1c7;
+  --color-fg-light: #3c3836;
+  --color-yellow-light: #b57614;
+  --color-orange-light: #af3a03;
+  --color-red-light: #9d0006;
+  --color-purple-light: #8f3f71;
+  --color-blue-light: #076678;
+  --color-aqua-light: #427b58;
+  --color-gray-light: #7c6f64;
+
+  /* Dark theme variables */
+  --color-bg-dark: #282828;
+  --color-fg-dark: #ebdbb2;
+  --color-yellow-dark: #d79921;
+  --color-orange-dark: #d65d0e;
+  --color-red-dark: #cc241d;
+  --color-purple-dark: #b16286;
+  --color-blue-dark: #458588;
+  --color-aqua-dark: #689d6a;
+  --color-gray-dark: #928374;
+
+  /* Default theme colors (will be updated by JS) */
+  --color-bg: var(--color-bg-dark);
+  --color-fg: var(--color-fg-dark);
+  --color-yellow: var(--color-yellow-dark);
+  --color-orange: var(--color-orange-dark);
+  --color-red: var(--color-red-dark);
+  --color-purple: var(--color-purple-dark);
+  --color-blue: var(--color-blue-dark);
+  --color-aqua: var(--color-aqua-dark);
+  --color-gray: var(--color-gray-dark);
+}
+
+/* Theme Classes */
+[data-theme="light"] {
+  --color-bg: var(--color-bg-light);
+  --color-fg: var(--color-fg-light);
+  --color-yellow: var(--color-yellow-light);
+  --color-orange: var(--color-orange-light);
+  --color-red: var(--color-red-light);
+  --color-purple: var(--color-purple-light);
+  --color-blue: var(--color-blue-light);
+  --color-aqua: var(--color-aqua-light);
+  --color-gray: var(--color-gray-light);
+}
+
+[data-theme="dark"] {
+  --color-bg: var(--color-bg-dark);
+  --color-fg: var(--color-fg-dark);
+  --color-yellow: var(--color-yellow-dark);
+  --color-orange: var(--color-orange-dark);
+  --color-red: var(--color-red-dark);
+  --color-purple: var(--color-purple-dark);
+  --color-blue: var(--color-blue-dark);
+  --color-aqua: var(--color-aqua-dark);
+  --color-gray: var(--color-gray-dark);
+}
+
+/* Base styles */
+main {
+  min-height: calc(100vh - 64px); /* Subtract nav height */
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Clear any conflicting margins */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+
+  background-color: var(--gruvbox-bg);
+  color: var(--gruvbox-fg);
+  font-feature-settings:
+    "salt" 1,
+    "ss01" 1,
+    "ss02" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-feature-settings:
+      "salt" 1,
+      "ss01" 1,
+      "ss02" 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-yellow-light);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-yellow-dark);
+}
+
+/* Selection color */
+/*::selection {
+  background: var(--color-red);
+  color: var(--color-red);
+}*/
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(215, 153, 33, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(215, 153, 33, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(215, 153, 33, 0.2);
+  }
+}
+
+/* Utility classes */
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow-effect {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Link hover effects */
+.hover-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--gruvbox-yellow);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Card and container styles */
+.glass-card {
+  background: rgba(40, 40, 40, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(146, 131, 116, 0.1);
+  border-radius: 12px;
+}
+
+/* Button styles */
+.custom-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.custom-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(215, 153, 33, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s ease,
+    height 0.6s ease;
+}
+
+.custom-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Focus styles */
+:focus {
+  outline: 2px solid var(--gruvbox-yellow);
+  outline-offset: 2px;
+}
+
+/* Improved accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dark mode specific styles */
+@media (prefers-color-scheme: dark) {
+  .glass-card {
+    background: rgba(40, 40, 40, 0.8);
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .glass-card {
+    backdrop-filter: none;
+    background: var(--gruvbox-bg-soft);
+  }
+}
