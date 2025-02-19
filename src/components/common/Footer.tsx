@@ -1,5 +1,6 @@
 "use client";
 
+import { links } from "@/lib/links";
 import { socials } from "@/lib/socials";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -24,18 +25,16 @@ const Footer = () => {
                 Navigation
               </h3>
               <ul className="space-y-2">
-                {["Home", "Projects", "About", "Posts", "Contact"].map(
-                  (item) => (
-                    <li key={item}>
-                      <Link
-                        href={`/${item.toLowerCase()}`}
-                        className="font-mono text-[var(--color-gray)] hover:text-[var(--color-yellow)] transition-colors"
-                      >
-                        {item}
-                      </Link>
-                    </li>
-                  ),
-                )}
+                {links.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="font-mono text-[var(--color-gray)] hover:text-[var(--color-yellow)] transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 

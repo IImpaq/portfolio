@@ -247,9 +247,9 @@ body {
 }
 
 /* Mobile optimizations */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .glass-card {
     backdrop-filter: none;
     background: var(--gruvbox-bg-soft);
   }
-}
+}*/
