@@ -11,7 +11,7 @@ export const statistics: Statistic[] = [
   },
   {
     label: "Coffees",
-    value: "100+",
+    value: "1500+",
   },
   {
     label: "Lines of Code",

@@ -1,16 +1,12 @@
 import { Technology } from "@/types";
 import {
-  SiReact,
   SiTypescript,
   SiNextdotjs,
   SiTailwindcss,
-  SiPrisma,
   SiPostgresql,
   SiDocker,
-  SiAwslambda,
   SiSwift,
   SiMongodb,
-  SiC,
   SiCplusplus,
   SiPython,
   SiDigitalocean,

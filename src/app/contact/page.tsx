@@ -1,35 +1,9 @@
 "use client";
 
+import { contacts } from "@/lib/contacts";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FiMail, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
-
-const socialLinks = [
-  {
-    icon: FiGithub,
-    href: "https://github.com",
-    label: "GitHub",
-    username: "@username",
-  },
-  {
-    icon: FiLinkedin,
-    href: "https://linkedin.com",
-    label: "LinkedIn",
-    username: "@username",
-  },
-  {
-    icon: FiTwitter,
-    href: "https://twitter.com",
-    label: "Twitter",
-    username: "@username",
-  },
-  {
-    icon: FiMail,
-    href: "mailto:your@email.com",
-    label: "Email",
-    username: "your@email.com",
-  },
-];
+import { FiMapPin, FiUser } from "react-icons/fi";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState<string>("");
@@ -38,7 +12,6 @@ export default function Contact() {
     e.preventDefault();
     setFormStatus("sending");
 
-    // Add your form submission logic here
     await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate API call
 
     setFormStatus("sent");
@@ -133,15 +106,15 @@ export default function Contact() {
                         required
                         rows={5}
                         className="w-full p-3 rounded-lg bg-[var(--color-fg)] bg-opacity-5 border border-[var(--color-fg)] border-opacity-10 focus:border-[var(--color-yellow)] focus:outline-none text-[var(--color-fg)] placeholder-[var(--color-gray)]"
-                        placeholder="Your message..."
+                        placeholder="Sending message via the form is not support yet, please contact me via email or social media."
                       />
                     </div>
                     <motion.button
                       type="submit"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full py-3 px-6 rounded-lg bg-[var(--color-yellow)] bg-opacity-10 text-[var(--color-yellow)] font-mono hover:bg-opacity-20 transition-all duration-300"
-                      disabled={formStatus === "sending"}
+                      className="w-full py-3 px-6 rounded-lg bg-[var(--color-yellow)] bg-opacity-10 text-[var(--color-fg)] font-mono hover:bg-opacity-20 transition-all duration-300"
+                      disabled
                     >
                       {formStatus === "sending"
                         ? "Sending..."
@@ -158,14 +131,15 @@ export default function Contact() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
-                className="md:w-80"
+                className="md:w-80 space-y-6" // Added space-y-6 for gap between cards
               >
+                {/* Social Links Card */}
                 <div className="glass-card p-8 rounded-xl border border-[var(--color-fg)] border-opacity-10">
                   <h2 className="text-2xl font-bold mb-6 font-mono text-[var(--color-fg)]">
                     Connect With Me
                   </h2>
                   <div className="space-y-4">
-                    {socialLinks.map((link, index) => (
+                    {contacts.map((link, index) => (
                       <motion.a
                         key={index}
                         href={link.href}
@@ -188,6 +162,46 @@ export default function Contact() {
                         </div>
                       </motion.a>
                     ))}
+                  </div>
+                </div>
+
+                {/* Legal Information Card */}
+                <div className="glass-card p-8 rounded-xl border border-[var(--color-fg)] border-opacity-10">
+                  <h2 className="text-2xl font-bold mb-6 font-mono text-[var(--color-fg)]">
+                    Legal Information
+                  </h2>
+                  <div className="space-y-4">
+                    {/* Author/Media Owner */}
+                    <div className="flex items-center p-4 rounded-lg">
+                      <FiUser
+                        size={20}
+                        className="text-[var(--color-yellow)]"
+                      />
+                      <div className="ml-4">
+                        <div className="text-sm font-medium text-[var(--color-fg)]">
+                          Author / Media Owner
+                        </div>
+                        <div className="text-sm text-[var(--color-gray)]">
+                          Marcus Gugacs
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Location */}
+                    <div className="flex items-center p-4 rounded-lg">
+                      <FiMapPin
+                        size={20}
+                        className="text-[var(--color-yellow)]"
+                      />
+                      <div className="ml-4">
+                        <div className="text-sm font-medium text-[var(--color-fg)]">
+                          Location
+                        </div>
+                        <div className="text-sm text-[var(--color-gray)]">
+                          2113 Karnabrunn, Austria
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>

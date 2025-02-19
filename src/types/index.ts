@@ -23,6 +23,13 @@ export interface Experience {
   description: string;
 }
 
+export interface Contact {
+  icon: IconType;
+  label: string;
+  href: string;
+  username: string;
+}
+
 export interface Repository {
   id: number;
   name: string;
