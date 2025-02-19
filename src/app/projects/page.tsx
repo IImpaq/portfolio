@@ -10,6 +10,7 @@ import {
   FiTag,
   FiClock,
   FiType,
+  FiFolder,
 } from "react-icons/fi";
 import Select from "@/components/common/Select";
 import { Repository } from "@/types";
@@ -190,116 +191,162 @@ export default function Projects() {
   }
 
   return (
-    <div className="min-h-screen py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <motion.div
+    <div className="mt-[64px]">
+      {" "}
+      {/* Add top margin to account for navbar */}
+      <main className="container mx-auto px-6 py-16">
+        {/* Header Section */}
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-12"
+          className="max-w-3xl mx-auto mb-16 text-center"
         >
-          <h1 className="text-4xl font-bold mb-4 text-[var(--color-fg)]">
-            Projects
-          </h1>
-          <p className="text-[var(--color-gray)]">
-            A collection of my open source projects and experiments.
-          </p>
-        </motion.div>
-
-        {/* Filters and Search */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
-          {/* Search Bar - Left Side */}
-          <div className="w-full md:w-[300px]">
-            {" "}
-            {/* Fixed width for search bar */}
-            <input
-              type="text"
-              placeholder="Search projects..."
-              className="w-full px-4 py-2 rounded-lg bg-[var(--color-bg)] border border-[var(--color-gray)] border-opacity-20 text-[var(--color-fg)] focus:outline-none focus:border-[var(--color-yellow)] transition-colors"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-
-          {/* Selects - Right Side */}
-          <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
-            <div className="w-full md:w-[200px]">
-              {" "}
-              {/* Fixed width for each select */}
-              <Select
-                options={languageOptions}
-                value={languageFilter}
-                onChange={setLanguageFilter}
-                placeholder="Language"
-                className="w-full"
-              />
-            </div>
-
-            <div className="w-full md:w-[200px]">
-              <Select
-                options={topicOptions}
-                value={topicFilter}
-                onChange={setTopicFilter}
-                placeholder="Topic"
-                className="w-full"
-              />
-            </div>
-
-            <div className="w-full md:w-[200px]">
-              <Select
-                options={sortOptions}
-                value={sort}
-                onChange={setSort}
-                placeholder="Sort by"
-                className="w-full"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Filter Tags */}
-        <div className="mb-6 flex flex-wrap gap-2">
-          {languageFilter !== "all" && (
-            <FilterTag
-              label={`Language: ${languageFilter}`}
-              onRemove={() => setLanguageFilter("all")}
-            />
-          )}
-          {topicFilter !== "all" && (
-            <FilterTag
-              label={`Topic: ${topicFilter}`}
-              onRemove={() => setTopicFilter("all")}
-            />
-          )}
-          {(languageFilter !== "all" || topicFilter !== "all") && (
-            <button
-              onClick={() => {
-                setLanguageFilter("all");
-                setTopicFilter("all");
-              }}
-              className="text-sm text-[var(--color-gray)] hover:text-[var(--color-yellow)] transition-colors"
-            >
-              Clear all filters
-            </button>
-          )}
-        </div>
-
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredRepos.map((repo, index) => (
-            <ProjectCard key={repo.id} repo={repo} index={index} />
-          ))}
-        </div>
-
-        {filteredRepos.length === 0 && (
           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mb-8 inline-block"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono text-[var(--color-yellow)] border border-[var(--color-yellow)] border-opacity-40">
+              <FiFolder />
+              Featured Projects
+            </span>
+          </motion.div>
+
+          <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-center text-[var(--color-gray)] py-12"
+            transition={{ delay: 0.3 }}
+            className="text-4xl md:text-5xl font-bold mb-6 font-mono text-[var(--color-fg)]"
           >
-            No projects found matching your criteria.
-          </motion.div>
-        )}
-      </div>
+            Open Source Projects
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-xl text-[var(--color-gray)] max-w-2xl mx-auto"
+          >
+            A showcase of my personal projects and contributions to the
+            open-source community. Each project represents a unique challenge
+            and learning experience.
+          </motion.p>
+        </motion.section>
+
+        {/* Filters Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="max-w-6xl mx-auto mb-12"
+        >
+          <div className="glass-card p-6 rounded-lg">
+            {/* Search and Filters */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+              <div className="w-full md:w-[300px]">
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search projects..."
+                    className="w-full px-4 py-3 rounded-lg bg-[var(--color-bg)] border border-[var(--color-gray)] border-opacity-20 text-[var(--color-fg)] focus:outline-none focus:border-[var(--color-yellow)] transition-colors pl-4"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+                {[
+                  {
+                    options: languageOptions,
+                    value: languageFilter,
+                    onChange: setLanguageFilter,
+                    placeholder: "Language",
+                  },
+                  {
+                    options: topicOptions,
+                    value: topicFilter,
+                    onChange: setTopicFilter,
+                    placeholder: "Topic",
+                  },
+                  {
+                    options: sortOptions,
+                    value: sort,
+                    onChange: setSort,
+                    placeholder: "Sort by",
+                  },
+                ].map((select, index) => (
+                  <div key={index} className="w-full md:w-[200px]">
+                    <Select {...select} className="w-full" />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Active Filters */}
+            <div className="mt-4 flex flex-wrap items-center gap-2">
+              {(languageFilter !== "all" || topicFilter !== "all") && (
+                <>
+                  {languageFilter !== "all" && (
+                    <FilterTag
+                      label={`Language: ${languageFilter}`}
+                      onRemove={() => setLanguageFilter("all")}
+                    />
+                  )}
+                  {topicFilter !== "all" && (
+                    <FilterTag
+                      label={`Topic: ${topicFilter}`}
+                      onRemove={() => setTopicFilter("all")}
+                    />
+                  )}
+                  <button
+                    onClick={() => {
+                      setLanguageFilter("all");
+                      setTopicFilter("all");
+                    }}
+                    className="text-sm text-[var(--color-yellow)] hover:underline transition-all"
+                  >
+                    Clear all filters
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Projects Grid */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="max-w-6xl mx-auto"
+        >
+          {isLoading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <ProjectSkeleton key={i} />
+              ))}
+            </div>
+          ) : filteredRepos.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredRepos.map((repo, index) => (
+                <ProjectCard key={repo.id} repo={repo} index={index} />
+              ))}
+            </div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-16"
+            >
+              <div className="text-[var(--color-gray)] text-lg">
+                No projects found matching your criteria.
+              </div>
+            </motion.div>
+          )}
+        </motion.section>
+      </main>
     </div>
   );
 }

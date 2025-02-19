@@ -4,23 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import {
-  FiMenu,
-  FiX,
-  FiHome,
-  FiLayers,
-  FiUser,
-  FiMail,
-  FiCode,
-} from "react-icons/fi";
-
-const menuItems = [
-  { name: "Home", href: "/", icon: FiHome },
-  { name: "Projects", href: "/projects", icon: FiLayers },
-  { name: "About", href: "/about", icon: FiUser },
-  { name: "Posts", href: "/posts", icon: FiCode },
-  { name: "Contact", href: "/contact", icon: FiMail },
-];
+import { FiMenu, FiX } from "react-icons/fi";
+import { links } from "@/lib/links";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +67,7 @@ const Navigation = () => {
             className="glass-card rounded-2xl px-8 py-4"
           >
             <ul className="flex items-center gap-8">
-              {menuItems.map((item) => (
+              {links.map((item) => (
                 <motion.li key={item.name} whileHover={{ y: -2 }}>
                   <Link
                     href={item.href}
@@ -119,16 +104,17 @@ const Navigation = () => {
       {isMobile && (
         <>
           {/* Current Page Indicator (Mobile Only) */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-40"
-          >
-            <span className="px-4 py-2 rounded-full glass-card font-mono text-sm text-[var(--color-gray)]">
-              {pathname === "/" ? "home" : pathname.slice(1)}
-            </span>
-          </motion.div>
-
+          <div className="fixed top-6 left-0 right-0 flex justify-center z-40">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <span className="px-4 py-2 rounded-full glass-card font-mono text-sm text-[var(--color-gray)]">
+                {pathname === "/" ? "home" : pathname.slice(1)}
+              </span>
+            </motion.div>
+          </div>
+          ```
           <motion.button
             className="fixed top-6 left-6 z-50 p-3 rounded-full glass-card text-[var(--color-yellow)]"
             onClick={() => setIsOpen(!isOpen)}
@@ -137,7 +123,6 @@ const Navigation = () => {
           >
             {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </motion.button>
-
           <AnimatePresence>
             {isOpen && (
               <motion.div
@@ -148,14 +133,14 @@ const Navigation = () => {
                 className="fixed inset-0 z-40 bg-[var(--color-bg)] bg-opacity-98 backdrop-blur-sm"
               >
                 <div className="h-full flex items-center justify-center">
-                  <nav className="relative">
+                  <nav className="relative z-50">
                     <ul className="space-y-8">
-                      {menuItems.map((item, i) => (
+                      {links.map((item, i) => (
                         <motion.li
                           key={item.name}
                           custom={i}
                           variants={itemVariants}
-                          className="text-center"
+                          className="text-center relative z-50"
                         >
                           <Link
                             href={item.href}
@@ -181,8 +166,8 @@ const Navigation = () => {
                         </motion.li>
                       ))}
                     </ul>
-                    <div className="absolute -top-32 -left-32 w-64 h-64 bg-[var(--color-yellow)] rounded-full opacity-5 blur-3xl" />
-                    <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-[var(--color-orange)] rounded-full opacity-5 blur-3xl" />
+                    <div className="absolute -top-32 -left-32 w-64 h-64 bg-[var(--color-yellow)] rounded-full opacity-5 blur-3xl z-0" />
+                    <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-[var(--color-orange)] rounded-full opacity-5 blur-3xl z-0" />
                   </nav>
                 </div>
               </motion.div>
