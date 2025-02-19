@@ -1,101 +1,163 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import Head from "next/head";
+import { FiArrowRight } from "react-icons/fi";
+import Link from "next/link";
+import { socials } from "@/lib/socials";
+import { statistics } from "@/lib/stats";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      <Head>
+        <title>Marcus Gugacs</title>
+        <meta
+          name="description"
+          content="Portfolio of Marcus Gugacs - Full Stack Software Engineer"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <main className="min-h-screen relative">
+        {/* Hero Section */}
+        <section className="container mx-auto px-6 pt-32 pb-20 relative">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="max-w-3xl mx-auto"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="mb-8"
+              whileHover={{ scale: 1.02 }}
+            >
+              <span className="inline-block px-4 py-2 rounded-lg text-sm font-mono text-[var(--color-yellow)] border border-[var(--color-yellow)] border-opacity-40">
+                ✨ Available for new projects
+              </span>
+            </motion.div>
+
+            {/* Main heading */}
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight font-mono text-[var(--color-fg)]">
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                className="block"
+              >
+                Hi! I&apos;m Marcus,
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+                className="block mt-2"
+              >
+                I build{" "}
+                <span className="text-[var(--color-orange)]">
+                  delightful digital
+                </span>{" "}
+                experiences
+              </motion.span>
+            </h1>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="text-xl mb-12 leading-relaxed font-mono text-[var(--color-gray)]"
+            >
+              Full Stack Software Engineer specializing in crafting intuitive
+              interfaces and meaningful interactions. I turn complex problems
+              into simple, beautiful solutions.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-wrap gap-6 items-center mb-16"
+            >
+              <Link
+                href="/projects"
+                className="custom-button group relative inline-flex items-center gap-2 px-8 py-4 rounded-lg font-mono bg-[var(--color-yellow)] text-[var(--color-bg)]"
+              >
+                View Projects
+                <motion.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                  }}
+                >
+                  <FiArrowRight />
+                </motion.span>
+              </Link>
+
+              <Link
+                href="/contact"
+                className="custom-button inline-flex items-center gap-2 px-8 py-4 rounded-lg font-mono text-[var(--color-gray)] border-2 border-[var(--color-gray)] border-opacity-40"
+              >
+                Let&apos;s Talk
+              </Link>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="flex items-center gap-6"
+            >
+              {socials.map((social) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-lg transition-all duration-300 text-[var(--color-gray)] hover:text-[var(--color-yellow)] hover:bg-[var(--color-gray)] hover:bg-opacity-20"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <social.icon size={24} />
+                </motion.a>
+              ))}
+            </motion.div>
+          </motion.div>
+        </section>
+
+        {/* Stats Section */}
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="container mx-auto px-6 py-20 relative"
+        >
+          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            {statistics.map((stat, index) => (
+              <motion.div
+                key={index}
+                className="text-center glass-card p-6 rounded-lg"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <motion.div className="text-3xl font-bold mb-2 font-mono text-[var(--color-yellow)]">
+                  {stat.value}
+                </motion.div>
+                <motion.div className="text-sm font-mono text-[var(--color-gray)]">
+                  {stat.label}
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
