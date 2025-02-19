@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Head from "next/head";
 import { FiArrowRight } from "react-icons/fi";
 import Link from "next/link";
 import { socials } from "@/lib/socials";
@@ -10,14 +9,6 @@ import { statistics } from "@/lib/stats";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Marcus Gugacs</title>
-        <meta
-          name="description"
-          content="Portfolio of Marcus Gugacs - Full Stack Software Engineer"
-        />
-      </Head>
-
       <main className="min-h-screen relative">
         {/* Hero Section */}
         <section className="container mx-auto px-6 pt-32 pb-20 relative">
