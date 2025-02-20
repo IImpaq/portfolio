@@ -5,13 +5,14 @@ import { FiArrowRight } from "react-icons/fi";
 import Link from "next/link";
 import { socials } from "@/lib/socials";
 import { statistics } from "@/lib/stats";
+import Stats from "@/components/about/Stats";
 
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen relative">
+      <main className="relative">
         {/* Hero Section */}
-        <section className="container mx-auto px-6 pt-32 pb-20 relative">
+        <section className="container mx-auto px-6 pt-60 pb-20 relative">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -124,30 +125,9 @@ export default function Home() {
         </section>
 
         {/* Stats Section */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="container mx-auto px-6 py-20 relative"
-        >
-          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-            {statistics.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center glass-card p-6 rounded-lg"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <motion.div className="text-3xl font-bold mb-2 font-mono text-[var(--color-yellow)]">
-                  {stat.value}
-                </motion.div>
-                <motion.div className="text-sm font-mono text-[var(--color-gray)]">
-                  {stat.label}
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
+        <div className="mt-32">
+          <Stats />
+        </div>
       </main>
     </>
   );

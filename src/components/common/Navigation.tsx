@@ -114,7 +114,7 @@ const Navigation = () => {
               </span>
             </motion.div>
           </div>
-          ```
+
           <motion.button
             className="fixed top-6 left-6 z-50 p-3 rounded-full glass-card text-[var(--color-yellow)]"
             onClick={() => setIsOpen(!isOpen)}

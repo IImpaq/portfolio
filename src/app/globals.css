@@ -106,33 +106,32 @@ body {
   }
 }
 
-/* Webkit Scrollbar (Safari, Chrome, Edge) */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg-dark);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-yellow-light);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-yellow-dark);
-}
-
 /* Firefox scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-yellow-light) var(--color-bg-dark);
+@supports (scrollbar-color: auto) {
+  * {
+    scrollbar-width: 10px;
+    scrollbar-color: var(--color-yellow) var(--color-bg);
+  }
 }
 
-/* Firefox hover state can be handled with CSS variables */
-*:hover {
-  scrollbar-color: var(--color-yellow-dark) var(--color-bg-dark);
+/* WebKit scrollbar (Chrome, Safari, Edge) */
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-yellow);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange);
+  }
 }
 
 /* Selection color */

@@ -19,7 +19,7 @@ const Timeline = () => {
 
         <div className="relative w-full">
           {/* Timeline line */}
-          <div className="absolute left-[7px] md:left-1/2 h-full w-[2px] bg-gradient-to-b from-[var(--color-yellow)] via-[var(--color-orange)] to-[var(--color-purple)] opacity-20" />
+          <div className="absolute left-6 md:left-1/2 h-full w-[2px] bg-gradient-to-b from-[var(--color-yellow)] via-[var(--color-orange)] to-[var(--color-purple)] opacity-20" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -28,15 +28,13 @@ const Timeline = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className={`relative flex items-start mb-12 px-6 ${
-                index % 2 === 0
-                  ? "md:flex-row-reverse md:pr-0 md:pl-0"
-                  : "md:flex-row"
+              className={`relative flex items-start mb-12 ${
+                index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
               }`}
             >
               {/* Timeline dot with glow effect */}
               <div
-                className={`absolute left-[31px] md:left-1/2 w-4 h-4 transform -translate-x-1/2 mt-8`}
+                className={`absolute left-6 md:left-1/2 w-4 h-4 transform -translate-x-1/2 mt-8`}
               >
                 <div className="relative w-full h-full">
                   {/* Glow effect */}
@@ -48,8 +46,10 @@ const Timeline = () => {
 
               {/* Content */}
               <div
-                className={`ml-0 md:ml-0 w-full md:w-[calc(50%-4rem)] ${
-                  index % 2 === 0 ? "md:mr-5" : "md:ml-5"
+                className={`pl-16 md:pl-0 w-full md:w-[calc(50%-2rem)] ${
+                  index % 2 === 0
+                    ? "md:mr-auto md:pl-0 md:pr-8"
+                    : "md:ml-auto md:pl-8"
                 }`}
               >
                 <motion.div

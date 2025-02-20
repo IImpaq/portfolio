@@ -20,8 +20,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
         }}
       />
       <Navigation />
-      <div className="relative pt-20">
-        {children}
+      <div className="flex flex-col min-h-screen pt-20">
+        <main className="flex-grow">{children}</main>
         <Footer />
       </div>
     </>
