@@ -81,8 +81,8 @@ body {
   position: relative;
   min-height: 100vh;
 
-  background-color: var(--gruvbox-bg);
-  color: var(--gruvbox-fg);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
   font-feature-settings:
     "salt" 1,
     "ss01" 1,
@@ -106,7 +106,7 @@ body {
   }
 }
 
-/* Custom scrollbar */
+/* Webkit Scrollbar (Safari, Chrome, Edge) */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -122,6 +122,17 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-yellow-dark);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-yellow-light) var(--color-bg-dark);
+}
+
+/* Firefox hover state can be handled with CSS variables */
+*:hover {
+  scrollbar-color: var(--color-yellow-dark) var(--color-bg-dark);
 }
 
 /* Selection color */
@@ -177,7 +188,7 @@ body {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: var(--gruvbox-yellow);
+  background-color: var(--color-yellow);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -225,7 +236,7 @@ body {
 
 /* Focus styles */
 :focus {
-  outline: 2px solid var(--gruvbox-yellow);
+  outline: 2px solid var(--color-yellow);
   outline-offset: 2px;
 }
 
@@ -245,11 +256,3 @@ body {
     background: rgba(40, 40, 40, 0.8);
   }
 }
-
-/* Mobile optimizations */
-/*@media (max-width: 768px) {
-  .glass-card {
-    backdrop-filter: none;
-    background: var(--gruvbox-bg-soft);
-  }
-}*/

@@ -145,12 +145,12 @@ export default function Contact() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center p-4 rounded-lg hover:bg-[var(--color-yellow)] hover:bg-opacity-5 transition-all duration-300"
+                        className="flex items-center p-4 rounded-lg hover:bg-[var(--color-yellow)] hover:bg-opacity-5 transition-all duration-300 group"
                         whileHover={{ x: 5 }}
                       >
                         <link.icon
                           size={20}
-                          className="text-[var(--color-yellow)]"
+                          className="text-[var(--color-yellow)] group-hover:text-[var(--color-fg)] transition-colors duration-300"
                         />
                         <div className="ml-4">
                           <div className="text-sm font-medium text-[var(--color-fg)]">
