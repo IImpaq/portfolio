@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import Link from "next/link";
 import { socials } from "@/lib/socials";
-import { statistics } from "@/lib/stats";
 import Stats from "@/components/about/Stats";
 
 export default function Home() {
