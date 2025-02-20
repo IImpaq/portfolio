@@ -81,8 +81,8 @@ body {
   position: relative;
   min-height: 100vh;
 
-  background-color: var(--gruvbox-bg);
-  color: var(--gruvbox-fg);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
   font-feature-settings:
     "salt" 1,
     "ss01" 1,
@@ -106,22 +106,32 @@ body {
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+/* Firefox scrollbar */
+@supports (scrollbar-color: auto) {
+  * {
+    scrollbar-width: 10px;
+    scrollbar-color: var(--color-yellow) var(--color-bg);
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: var(--color-bg-dark);
-}
+/* WebKit scrollbar (Chrome, Safari, Edge) */
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-yellow-light);
-  border-radius: 5px;
-}
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-yellow-dark);
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-yellow);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange);
+  }
 }
 
 /* Selection color */
@@ -177,7 +187,7 @@ body {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: var(--gruvbox-yellow);
+  background-color: var(--color-yellow);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -225,7 +235,7 @@ body {
 
 /* Focus styles */
 :focus {
-  outline: 2px solid var(--gruvbox-yellow);
+  outline: 2px solid var(--color-yellow);
   outline-offset: 2px;
 }
 
@@ -245,11 +255,3 @@ body {
     background: rgba(40, 40, 40, 0.8);
   }
 }
-
-/* Mobile optimizations */
-/*@media (max-width: 768px) {
-  .glass-card {
-    backdrop-filter: none;
-    background: var(--gruvbox-bg-soft);
-  }
-}*/
