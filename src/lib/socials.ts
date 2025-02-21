@@ -1,7 +1,7 @@
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { TbBrandBluesky } from "react-icons/tb";
 import { SocialLink } from "@/types";
-import { SiXing } from "react-icons/si";
+import { SiInstagram, SiXing } from "react-icons/si";
 
 export const socials: SocialLink[] = [
   {
@@ -12,7 +12,12 @@ export const socials: SocialLink[] = [
   {
     icon: TbBrandBluesky,
     href: "https://bsky.app/profile/iimpaq.bsky.social",
-    label: "Twitter",
+    label: "Bluesky",
+  },
+  {
+    icon: SiInstagram,
+    href: "https://www.instagram.com/mgugacs/",
+    label: "Instagram",
   },
   {
     icon: FiLinkedin,
