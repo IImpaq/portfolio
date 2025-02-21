@@ -76,7 +76,7 @@ export default function Home() {
             >
               <Link
                 href="/projects"
-                className="custom-button group relative inline-flex items-center gap-2 px-8 py-4 rounded-lg font-mono bg-[var(--color-yellow)] text-[var(--color-bg)]"
+                className="custom-button group relative inline-flex items-center gap-2 px-8 py-4 rounded-lg font-mono bg-[var(--color-yellow)] text-[var(--color-bg)] hover:bg-[var(--color-orange)]"
               >
                 View Projects
                 <motion.span
@@ -93,7 +93,7 @@ export default function Home() {
 
               <Link
                 href="/contact"
-                className="custom-button inline-flex items-center gap-2 px-8 py-4 rounded-lg font-mono text-[var(--color-gray)] border-2 border-[var(--color-gray)] border-opacity-40"
+                className="custom-button inline-flex items-center gap-2 px-8 py-4 rounded-lg font-mono text-[var(--color-gray)] border-2 border-[var(--color-gray)] border-opacity-40 hover:text-[var(--color-yellow)] hover:border-[var(--color-yellow)]"
               >
                 Let&apos;s Talk
               </Link>
@@ -106,13 +106,13 @@ export default function Home() {
               transition={{ delay: 0.7 }}
               className="flex items-center gap-6"
             >
-              {socials.map((social) => (
+              {socials.map((social, index) => (
                 <motion.a
-                  key={social.label}
+                  key={index}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg transition-all duration-300 text-[var(--color-gray)] hover:text-[var(--color-yellow)] hover:bg-[var(--color-gray)] hover:bg-opacity-20"
+                  className="p-3 rounded-lg glass-card text-[var(--color-gray)] hover:text-[var(--color-yellow)] transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
