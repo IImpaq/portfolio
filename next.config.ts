@@ -7,5 +7,4 @@ const nextConfig: NextConfig = {
 
 export default withPlausibleProxy({
   customDomain: process.env.NEXT_PUBLIC_PLAUSIBLE_API,
-  scriptName: "script.file-downloads.hash.outbound-links",
 })(nextConfig);
