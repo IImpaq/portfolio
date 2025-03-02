@@ -201,11 +201,12 @@ export default function Projects() {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl mx-auto mb-16 text-center"
         >
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mb-8 inline-block"
+            className="mb-8 inline-block cursor-default"
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono text-[var(--color-yellow)] border border-[var(--color-yellow)] border-opacity-40">
               <FiFolder />
