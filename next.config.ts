@@ -1,19 +1,10 @@
 import type { NextConfig } from "next";
+import { withPlausibleProxy } from "next-plausible";
 
 const nextConfig: NextConfig = {
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "Content-Security-Policy",
-            value: `default-src 'self'; script-src 'self' 'unsafe-inline' ${process.env.NEXT_PUBLIC_PLAUSIBLE_API}; connect-src 'self' ${process.env.NEXT_PUBLIC_PLAUSIBLE_API};`,
-          },
-        ],
-      },
-    ];
-  },
+  /* config options here */
 };
 
-export default nextConfig;
+export default withPlausibleProxy({
+  customDomain: process.env.NEXT_PUBLIC_PLAUSIBLE_API,
+})(nextConfig);
