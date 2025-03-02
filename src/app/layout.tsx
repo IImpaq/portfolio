@@ -30,7 +30,11 @@ export default function RootLayout({
         <PlausibleProvider
           customDomain={`${process.env.NEXT_PUBLIC_PLAUSIBLE_API}`}
           domain={`${process.env.NEXT_PUBLIC_DOMAIN}`}
-          enabled
+          trackOutboundLinks={true}
+          trackFileDownloads={true}
+          hash={true}
+          selfHosted={true}
+          enabled={true}
         >
           {children}
         </PlausibleProvider>
