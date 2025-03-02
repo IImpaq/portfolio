@@ -35,8 +35,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="mb-8"
-                whileHover={{ scale: 1.02 }}
+                className="mb-8 cursor-default"
               >
                 <span className="inline-block px-4 py-2 rounded-lg text-sm font-mono text-[var(--color-yellow)] border border-[var(--color-yellow)] border-opacity-40">
                   ✨ Let&apos;s create something amazing

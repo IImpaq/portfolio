@@ -2,6 +2,7 @@ import { Contact } from "@/types";
 import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 import { SiXing } from "react-icons/si";
 import { TbBrandBluesky } from "react-icons/tb";
+import { BSKY_USER_TAG } from "@/lib/constants";
 
 export const contacts: Contact[] = [
   {
@@ -12,9 +13,9 @@ export const contacts: Contact[] = [
   },
   {
     icon: TbBrandBluesky,
-    href: "https://bsky.app/profile/iimpaq.bsky.social",
+    href: `https://bsky.app/profile/${BSKY_USER_TAG}`,
     label: "Bluesky",
-    username: "@iimpaq.bsky.social",
+    username: `@${BSKY_USER_TAG}`,
   },
   {
     icon: FiLinkedin,

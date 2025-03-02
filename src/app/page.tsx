@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <main className="relative">
         {/* Hero Section */}
-        <section className="container mx-auto px-6 pt-60 pb-20 relative">
+        <section className="container mx-auto px-6 pt-32 pb-20 relative">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -23,8 +23,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-8"
-              whileHover={{ scale: 1.02 }}
+              className="mb-8 cursor-default"
             >
               <span className="inline-block px-4 py-2 rounded-lg text-sm font-mono text-[var(--color-yellow)] border border-[var(--color-yellow)] border-opacity-40">
                 ✨ Available for new projects

@@ -10,10 +10,11 @@ import {
 } from "react-icons/fi";
 import { Post } from "@/types";
 import Image from "next/image";
+import { BSKY_USER_TAG } from "@/lib/constants";
 
 const PostCard = ({ post, index }: { post: Post; index: number }) => {
   const getPostUrl = (post: Post) => {
-    return `https://bsky.app/profile/iimpaq.bsky.social/post/${post.id}`;
+    return `https://bsky.app/profile/${BSKY_USER_TAG}/post/${post.id}`;
   };
 
   return (
